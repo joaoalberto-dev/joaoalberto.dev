@@ -1,7 +1,10 @@
+import { Avatar } from "@/ui/avatar/avatar"
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>João Alberto - Software developer</h1>
+    <main className="flex flex-col p-8 md:p-16 gap-8">
+      <Avatar />
+      <h1>João Alberto</h1>
     </main>
   );
 }
