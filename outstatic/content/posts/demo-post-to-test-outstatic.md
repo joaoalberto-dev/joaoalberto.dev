@@ -1,6 +1,6 @@
 ---
 title: 'Demo post to test outstatic'
-status: 'draft'
+status: 'published'
 author:
   name: 'João Alberto'
   picture: 'https://avatars.githubusercontent.com/u/90731442?v=4'
