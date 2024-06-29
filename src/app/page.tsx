@@ -1,4 +1,4 @@
-import { Avatar } from "@/ui/avatar/avatar"
+import { Avatar } from "@/ui/avatar/avatar";
 
 export default function Home() {
   return (
