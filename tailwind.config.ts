@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "text-title": "var(--text-title)",
+      },
       colors: {
         "brand-dark": "#131313",
         "brand-light": "#f1f5f9",

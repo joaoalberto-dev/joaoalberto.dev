@@ -1,9 +1,13 @@
 import "@/ui/globals.css";
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Bricolage_Grotesque } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--text-title",
+});
 
 export const metadata: Metadata = {
   title: "João Alberto",
@@ -20,7 +24,7 @@ export default function RootLayout({
       lang="en"
       className="bg-brand-light dark:bg-brand-dark text-brand-dark dark:text-brand-light"
     >
-      <body className={inter.className}>
+      <body className={`${inter.className} ${bricolage.variable}`}>
         <div className="max-w-[64ch] mx-auto">{children}</div>
       </body>
     </html>
