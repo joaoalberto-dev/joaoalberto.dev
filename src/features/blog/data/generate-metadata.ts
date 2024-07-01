@@ -11,6 +11,7 @@ function generateMetadata({ params }: BlogPageProps): Metadata {
 
   if (post?.title) {
     metadata.title = post.title
+
     metadata.openGraph = {
       title: post.title,
       description: post.description,
@@ -21,12 +22,21 @@ function generateMetadata({ params }: BlogPageProps): Metadata {
       type: 'website'
     }
 
+    metadata.twitter = {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      creator: '@joaoalbertodev',
+    }
+
     if (post.coverImage) {
       metadata.openGraph.images = {
         url: post.coverImage,
         width: 800,
         height: 600,
       }
+
+      metadata.twitter.images = [post.coverImage]
     }
   }
 
