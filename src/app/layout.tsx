@@ -25,7 +25,7 @@ export default function RootLayout({
       className="bg-brand-light dark:bg-brand-dark text-brand-dark dark:text-brand-light"
     >
       <body className={`${inter.className} ${bricolage.variable}`}>
-        <div className="max-w-[64ch] mx-auto">{children}</div>
+        <div className="max-w-[64ch] mx-auto p-8 md:p-16">{children}</div>
       </body>
     </html>
   );
