@@ -1,12 +1,7 @@
 import { getDocumentBySlug } from "outstatic/server";
 import { dateFormatter } from "@/utils/date-formatter";
 import { parse } from "@/features/markdown/parser";
-
-type BlogPageProps = {
-  params: {
-    slug: string;
-  };
-};
+import { BlogPageProps } from "../types/types";
 
 async function BlogPage({ params }: BlogPageProps) {
   const post = getDocumentBySlug("posts", params.slug, ['title', 'content', 'publishedAt']);

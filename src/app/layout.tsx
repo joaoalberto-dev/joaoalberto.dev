@@ -11,7 +11,10 @@ const bricolage = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "João Alberto",
+  title: {
+    template: "%s | João Alberto",
+    default: "Home | João Alberto"
+  },
   description: "Software developer",
 };
 
