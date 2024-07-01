@@ -2,6 +2,7 @@ import "@/ui/globals.css";
 
 import type { Metadata } from "next";
 import { Inter, Bricolage_Grotesque } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] });
 const bricolage = Bricolage_Grotesque({
@@ -26,6 +27,7 @@ export default function RootLayout({
     >
       <body className={`${inter.className} ${bricolage.variable}`}>
         <div className="max-w-[64ch] mx-auto p-8 md:p-16">{children}</div>
+        <Analytics />
       </body>
     </html>
   );
