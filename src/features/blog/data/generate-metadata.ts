@@ -7,7 +7,7 @@ function generateMetadata({ params }: BlogPageProps): Metadata {
     title: 'Blog'
   }
 
-  const post = getDocumentBySlug("posts", params.slug, ['title']);
+  const post = getDocumentBySlug("posts", params.slug, ['title', 'description', 'coverImage']);
 
   if (post?.title) {
     metadata.title = post.title
@@ -30,13 +30,15 @@ function generateMetadata({ params }: BlogPageProps): Metadata {
     }
 
     if (post.coverImage) {
+      const coverImage = `https://joaoalberto.dev${post.coverImage}`
+
       metadata.openGraph.images = {
-        url: post.coverImage,
+        url: coverImage,
         width: 800,
         height: 600,
       }
 
-      metadata.twitter.images = [post.coverImage]
+      metadata.twitter.images = [coverImage]
     }
   }
 
