@@ -1,11 +1,11 @@
 {
-  "commit": "693b120b565bf91695e607427ee26747d7c0c882",
-  "generated": "2024-07-01T19:55:26.822Z",
+  "commit": "dc6384d6cf7a0ca0e0d780d8f935e24f2e5060b4",
+  "generated": "Mon, 01 Jul 2024 19:55:35 GMT",
   "metadata": [
     {
       "__outstatic": {
-        "commit": "693b120b565bf91695e607427ee26747d7c0c882",
-        "hash": "4207688618",
+        "commit": "ece9dfa5e603d8773ccc4b8ce2613cc478840834",
+        "hash": "3071616970",
         "path": "outstatic/content/posts/using-outstatic-as-blog-engine.md"
       },
       "author": {
