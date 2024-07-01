@@ -15,6 +15,7 @@ const config: Config = {
       colors: {
         "brand-dark": "#131313",
         "brand-light": "#f1f5f9",
+        "brand-accent": "#6FA0AC"
       },
     },
   },

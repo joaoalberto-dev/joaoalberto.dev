@@ -5,6 +5,11 @@ async function parse(content: string) {
   return await compileMDX({
     source: content,
     components: {
+      a({ children, href }) {
+        return (
+          <a href={href} className="font-regular text-brand-accent">{children}</a>
+        )
+      },
       img(props) {
         return (
           <Zoom wrapElement="span">
