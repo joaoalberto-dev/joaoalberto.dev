@@ -2,6 +2,7 @@ import "@/ui/globals.css";
 
 import type { Metadata } from "next";
 import { Inter, Bricolage_Grotesque } from "next/font/google";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 const bricolage = Bricolage_Grotesque({
@@ -19,13 +20,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { pathname } = useRouter();
+  const layoutClassNames = pathname.includes("outstatic") ? "" : "max-w-[64ch] mx-auto p-8 md:p-16"
+
   return (
     <html
       lang="en"
       className="bg-brand-light dark:bg-brand-dark text-brand-dark dark:text-brand-light"
     >
       <body className={`${inter.className} ${bricolage.variable}`}>
-        <div className="max-w-[64ch] mx-auto p-8 md:p-16">{children}</div>
+        <div className={layoutClassNames}>{children}</div>
       </body>
     </html>
   );
