@@ -1,3 +1,5 @@
+"use client"
+
 import "@/ui/globals.css";
 
 import type { Metadata } from "next";
