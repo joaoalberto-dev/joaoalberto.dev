@@ -15,7 +15,8 @@
     "next-mdx-remote": "^5.0.0",
     "outstatic": "^1.4.9",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-medium-image-zoom": "^5.2.5"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
