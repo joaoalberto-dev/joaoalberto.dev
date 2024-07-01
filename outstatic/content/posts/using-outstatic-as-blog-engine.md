@@ -1,5 +1,5 @@
 ---
-title: 'Using outstatic as blog engine'
+title: 'Using Outstatic as blog engine'
 status: 'published'
 author:
   name: 'João Alberto'
