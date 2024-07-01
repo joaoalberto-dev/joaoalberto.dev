@@ -6,7 +6,7 @@ author:
   picture: 'https://avatars.githubusercontent.com/u/90731442?v=4'
 slug: 'using-outstatic-as-blog-engine'
 description: ''
-coverImage: ''
+coverImage: '/images/outstatic-gxNT.png'
 publishedAt: '2024-06-28T04:50:20.200Z'
 ---
 
