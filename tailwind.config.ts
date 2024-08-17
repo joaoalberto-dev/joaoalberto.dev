@@ -3,22 +3,20 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/features/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
-      fontFamily: {
-        "text-title": "var(--text-title)",
+      backgroundColor: {
+        default: "#fbf1da",
       },
-      colors: {
-        "brand-dark": "#131313",
-        "brand-light": "#f1f5f9",
-        "brand-accent": "#6FA0AC"
+      textColor: {
+        default: "#57452b",
       },
     },
   },
   plugins: [],
 };
+
 export default config;

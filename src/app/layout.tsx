@@ -1,20 +1,16 @@
-import "@/ui/globals.css";
+import { cn } from "@/utils/cn";
+import "./globals.css";
 
 import type { Metadata } from "next";
-import { Inter, Bricolage_Grotesque } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
+import { Crimson_Pro } from "next/font/google";
+import { Navbar } from "@/components/navbar";
 
-const inter = Inter({ subsets: ["latin"] });
-const bricolage = Bricolage_Grotesque({
+const crimsonPro = Crimson_Pro({
   subsets: ["latin"],
-  variable: "--text-title",
 });
 
 export const metadata: Metadata = {
-  title: {
-    template: "%s | João Alberto",
-    default: "Home | João Alberto",
-  },
+  title: "João Alberto",
   description: "Software developer",
 };
 
@@ -24,13 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className="bg-brand-light text-brand-dark dark:bg-brand-dark dark:text-brand-light"
-    >
-      <body className={`${inter.className} ${bricolage.variable}`}>
-        <div className="p-8 mx-auto md:p-16 max-w-[64ch]">{children}</div>
-        <Analytics />
+    <html lang="en">
+      <body
+        className={cn(
+          "bg-default text-default text-xl max-w-[64ch] mx-auto px-4 pt-4",
+          crimsonPro.className
+        )}
+      >
+        <Navbar />
+        {children}
       </body>
     </html>
   );
