@@ -8,11 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundColor: {
-        default: "#fbf1da",
-      },
-      textColor: {
-        default: "#57452b",
+      colors: {
+        light: "#fbf1da",
+        dark: "#57452b",
+        darker: "#20190f",
       },
     },
   },

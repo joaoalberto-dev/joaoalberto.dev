@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "bg-default text-default text-xl max-w-[64ch] mx-auto px-4 pt-4",
+          "bg-light text-dark dark:bg-darker dark:text-light text-xl max-w-[64ch] mx-auto px-4 pt-4",
           crimsonPro.className
         )}
       >
