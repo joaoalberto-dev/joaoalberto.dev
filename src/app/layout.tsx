@@ -1,10 +1,13 @@
-import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
-import "./globals.css";
 import { cn } from "@/utils/cn";
+import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
-const inter = Inter({ variable: "--font-paragraph", subsets: ["latin"] });
+import type { Metadata } from "next";
+import { Crimson_Pro } from "next/font/google";
+import { Navbar } from "@/components/navbar";
+
+const crimsonPro = Crimson_Pro({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "João Alberto",
@@ -18,7 +21,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(spaceGrotesk.className, inter.variable)}>
+      <body
+        className={cn(
+          "bg-default text-default text-xl max-w-[64ch] mx-auto px-4 pt-4",
+          crimsonPro.className
+        )}
+      >
+        <Navbar />
         {children}
       </body>
     </html>

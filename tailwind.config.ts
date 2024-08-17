@@ -8,8 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        paragraph: "var(--font-paragraph)",
+      backgroundColor: {
+        default: "#fbf1da",
+      },
+      textColor: {
+        default: "#57452b",
       },
     },
   },
