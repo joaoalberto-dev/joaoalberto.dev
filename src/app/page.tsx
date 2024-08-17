@@ -7,7 +7,7 @@ export default function Home() {
     <main className="pt-8">
       <h1 className="mb-8">João Alberto</h1>
       <p className="md:text-balance mb-4">
-        I am a software developer. Currenctly I work at{" "}
+        I am a software developer. Currently I work at{" "}
         <Link href="https://fluency.io/">Fluency Academy</Link> building new
         experiences for language learners.
       </p>
