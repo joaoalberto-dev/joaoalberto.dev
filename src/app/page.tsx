@@ -1,11 +1,12 @@
 "use client";
 
 import { Link } from "@/components/link";
+import { Title } from "@/components/title";
 
 export default function Home() {
   return (
     <main className="pt-8">
-      <h1 className="mb-8">João Alberto</h1>
+      <Title className="mb-8">João Alberto</Title>
       <p className="md:text-balance mb-4">
         I am a software developer. Currently I work at{" "}
         <Link href="https://fluency.io/">Fluency Academy</Link> building new

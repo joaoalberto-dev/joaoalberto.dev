@@ -13,6 +13,9 @@ const config: Config = {
         dark: "#57452b",
         darker: "#20190f",
       },
+      fontFamily: {
+        title: "var(--font-title)",
+      },
     },
   },
   plugins: [],

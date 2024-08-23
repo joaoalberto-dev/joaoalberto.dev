@@ -2,10 +2,15 @@ import { cn } from "@/utils/cn";
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Crimson_Pro } from "next/font/google";
+import { Inter, Oswald } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 
-const crimsonPro = Crimson_Pro({
+const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-title",
+});
+
+const inter = Inter({
   subsets: ["latin"],
 });
 
@@ -24,7 +29,8 @@ export default function RootLayout({
       <body
         className={cn(
           "bg-light text-dark dark:bg-darker dark:text-light text-xl max-w-[64ch] mx-auto px-4 pt-4",
-          crimsonPro.className
+          inter.className,
+          oswald.variable
         )}
       >
         <Navbar />
