@@ -10,7 +10,7 @@ function Title({ children, className }: TitleProps) {
   return (
     <h1
       className={cn(
-        "font-title text-4xl font-light bg-gradient-to-tr from-amber-600 to-amber-300 text-transparent bg-clip-text",
+        "font-title text-2xl font-light bg-gradient-to-tr from-amber-600 to-amber-300 text-transparent bg-clip-text",
         className
       )}
     >
