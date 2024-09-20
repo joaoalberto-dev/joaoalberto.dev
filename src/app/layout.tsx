@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "bg-light text-dark dark:bg-darker dark:text-light max-w-[64ch] mx-auto px-4 pt-4",
+          "bg-light text-dark dark:bg-dark dark:text-light max-w-[64ch] mx-auto px-4 pt-4",
           inter.className,
           oswald.variable
         )}

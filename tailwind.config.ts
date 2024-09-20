@@ -9,9 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        light: "#fbf1da",
-        dark: "#57452b",
-        darker: "#20190f",
+        light: "#fff",
+        dark: "#000",
       },
       fontFamily: {
         title: "var(--font-title)",
