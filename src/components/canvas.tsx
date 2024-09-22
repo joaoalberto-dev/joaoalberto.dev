@@ -1,13 +1,20 @@
 "use client";
 
+import { useDarkMode } from "@/hooks/use-dark-mode";
 import { useEffect, useRef } from "react";
 
+const lightColor = `255,255,255`;
+const darkColor = `0,0,0`;
+
 function Canvas() {
+  const isDarkMode = useDarkMode();
+  const color = isDarkMode ? lightColor : darkColor;
   const mouse = useRef<{ x: number; y: number }>({ x: -100, y: -100 });
   const isClicking = useRef(false);
   const canvas = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
+    let timer: NodeJS.Timeout;
     const SCREEN_WIDTH = window.innerWidth;
     const SCREEN_HEIGHT = window.innerHeight;
 
@@ -29,31 +36,35 @@ function Canvas() {
           const Y = row * 10 + 2.5;
 
           context.beginPath();
-          context.fillStyle = "rgba(255,255,255,.1)";
+          context.fillStyle = `rgba(${color},.1)`;
           context.moveTo(col * 10 + 2.5, row * 10 + 2.5);
           context.arc(X, Y, 1, 0, Math.PI * 2);
           context.closePath();
 
-          if (Math.random() > 0.95) context.fillStyle = "rgba(255,255,255,.7)";
+          if (Math.random() > 0.95) context.fillStyle = `rgba(${color},.7)`;
 
           const a = X - mouse.current.x;
           const b = Y - mouse.current.y;
           const c = Math.sqrt(a * a + b * b);
           const SIZE = isClicking.current ? 120 : 100;
 
-          if (c < SIZE) context.fillStyle = "rgba(255,255,255,0)";
+          if (c < SIZE) context.fillStyle = `rgba(${color},0)`;
 
           context.fill();
         }
       }
 
-      setTimeout(() => {
+      timer = setTimeout(() => {
         requestAnimationFrame(() => render(context));
       }, 1000 / 24);
     }
 
     render(context);
-  }, []);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [color]);
 
   useEffect(() => {
     window.addEventListener("pointerdown", () => (isClicking.current = true));
