@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 function Canvas() {
-  const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const mouse = useRef<{ x: number; y: number }>({ x: -100, y: -100 });
   const canvas = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
