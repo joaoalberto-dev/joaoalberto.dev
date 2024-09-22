@@ -56,18 +56,18 @@ function Canvas() {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("mousemove", (event) => {
+    window.addEventListener("pointermove", (event) => {
       mouse.current = { x: event.clientX, y: event.clientY };
     });
 
     return () => {
-      window.removeEventListener("mousemove", (event) => {
+      window.removeEventListener("pointermove", (event) => {
         mouse.current = { x: event.clientX, y: event.clientY };
       });
     };
   });
 
-  return <canvas ref={canvas} className="w-dvw h-dvh" />;
+  return <canvas ref={canvas} className="w-dvw h-dvh overscroll-none" />;
 }
 
 export { Canvas };
