@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 
 function Canvas() {
   const mouse = useRef<{ x: number; y: number }>({ x: -100, y: -100 });
+  const isClicking = useRef(false);
   const canvas = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -38,10 +39,9 @@ function Canvas() {
           const a = X - mouse.current.x;
           const b = Y - mouse.current.y;
           const c = Math.sqrt(a * a + b * b);
+          const SIZE = isClicking.current ? 120 : 100;
 
-          if (c < 100) {
-            context.fillStyle = "rgba(255,255,255,0)";
-          }
+          if (c < SIZE) context.fillStyle = "rgba(255,255,255,0)";
 
           context.fill();
         }
@@ -56,11 +56,23 @@ function Canvas() {
   }, []);
 
   useEffect(() => {
+    window.addEventListener("pointerdown", () => (isClicking.current = true));
+    window.addEventListener("pointerup", () => (isClicking.current = false));
+
     window.addEventListener("pointermove", (event) => {
       mouse.current = { x: event.clientX, y: event.clientY };
     });
 
     return () => {
+      window.removeEventListener(
+        "pointerdown",
+        () => (isClicking.current = true)
+      );
+      window.removeEventListener(
+        "pointerup",
+        () => (isClicking.current = false)
+      );
+
       window.removeEventListener("pointermove", (event) => {
         mouse.current = { x: event.clientX, y: event.clientY };
       });
