@@ -1,14 +1,9 @@
-import { cn } from "@/utils/cn";
 import "./globals.css";
 
-import type { Metadata } from "next";
-import { Inter, Oswald } from "next/font/google";
-import { Navbar } from "@/components/navbar";
+import { cn } from "@/utils/cn";
 
-const oswald = Oswald({
-  subsets: ["latin"],
-  variable: "--font-title",
-});
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,15 +21,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+      </head>
       <body
         className={cn(
-          "bg-light text-dark dark:bg-dark dark:text-light max-w-[64ch] mx-auto px-4 pt-4",
-          inter.className,
-          oswald.variable
+          "bg-light text-dark dark:bg-dark dark:text-light",
+          inter.className
         )}
       >
-        <Navbar />
-        {children}
+        <div className="max-w-[64ch] mx-auto pt-8 px-4">{children}</div>
       </body>
     </html>
   );

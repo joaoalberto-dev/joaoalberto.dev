@@ -7,16 +7,7 @@ type TitleProps = HTMLAttributes<HTMLHeadingElement> & {
 };
 
 function Title({ children, className }: TitleProps) {
-  return (
-    <h1
-      className={cn(
-        "font-title text-2xl font-light bg-gradient-to-tr from-amber-600 to-amber-300 text-transparent bg-clip-text",
-        className
-      )}
-    >
-      {children}
-    </h1>
-  );
+  return <h1 className={cn("font-semibold", className)}>{children}</h1>;
 }
 
 export { Title };

@@ -12,7 +12,7 @@ function Link({ children, href, ...props }: LinkProps) {
     <NextLink
       {...props}
       className={cn(
-        "whitespace-nowrap opacity-70 decoration-2 underline-offset-[3px] hover:opacity-100 transition-opacity underline ",
+        "decoration-2 underline-offset-[3px] text-accent",
         props.className
       )}
       href={href}

@@ -9,11 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        light: "#fff",
-        dark: "#000",
-      },
-      fontFamily: {
-        title: "var(--font-title)",
+        light: "rgba(244, 244, 244, 1)",
+        dark: "rgba(11, 11, 11, 1)",
+        accent: "#2dd4bf",
       },
     },
   },
