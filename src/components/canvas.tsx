@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 
 const targetFPS = 24;
 const lightColor = `255,255,255`;
-const darkColor = `0,0,0`;
+const darkColor = `34,34,34`;
 const opacities = [
   `.1`,
   `.1`,
@@ -118,11 +118,15 @@ function Canvas() {
           context.beginPath();
           context.fillStyle = `rgba(${color},.1)`;
           context.moveTo(col * 10 + 2.5, row * 10 + 2.5);
-          context.arc(X, Y, 1, 0, Math.PI * 2);
-          context.closePath();
+
+          context.fillStyle = `rgba(${color},0)`;
 
           if (dots.current[row][col])
             context.fillStyle = `rgba(${color},${opacity})`;
+
+          context.arc(X, Y, 1, 0, Math.PI * 2);
+
+          context.closePath();
 
           const a = X - mouse.current.x;
           const b = Y - mouse.current.y;
