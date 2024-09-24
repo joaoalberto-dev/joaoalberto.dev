@@ -3,10 +3,35 @@
 import { useDarkMode } from "@/hooks/use-dark-mode";
 import { useEffect, useRef } from "react";
 
-const targetFPS = 12;
+const targetFPS = 24;
 const lightColor = `255,255,255`;
 const darkColor = `0,0,0`;
-const opacities = [`.1`, `.2`, `.3`, `.4`, `.5`, `.6`, `.7`];
+const opacities = [
+  `.1`,
+  `.1`,
+  `.1`,
+  `.1`,
+  `.2`,
+  `.2`,
+  `.2`,
+  `.2`,
+  `.3`,
+  `.3`,
+  `.3`,
+  `.3`,
+  `.4`,
+  `.4`,
+  `.4`,
+  `.4`,
+  `.5`,
+  `.5`,
+  `.5`,
+  `.5`,
+  `.6`,
+  `.6`,
+  `.6`,
+  `.6`,
+];
 
 function createDots() {
   const SCREEN_WIDTH = typeof window !== "undefined" ? window.innerWidth : 0;
