@@ -3,10 +3,10 @@
 import { useDarkMode } from "@/hooks/use-dark-mode";
 import { useEffect, useRef } from "react";
 
-const targetFPS = 24;
+const targetFPS = 12;
 const lightColor = `255,255,255`;
 const darkColor = `0,0,0`;
-const opacities = [`.1`, `.2`, `.3`, `.4`, `.5`, `.6`, `.7`, `.8`, `.9`, `1`];
+const opacities = [`.1`, `.2`, `.3`, `.4`, `.5`, `.6`, `.7`];
 
 function createDots() {
   const SCREEN_WIDTH = typeof window !== "undefined" ? window.innerWidth : 0;
@@ -26,8 +26,8 @@ function createDots() {
 
 function Canvas() {
   let isForward = useRef(true);
-
   const frame = useRef(0);
+  const hoveringElement = useRef<Element | null>(null);
   const isDarkMode = useDarkMode();
   const color = isDarkMode ? lightColor : darkColor;
   const mouse = useRef<{ x: number; y: number }>({ x: -100, y: -100 });
@@ -63,6 +63,28 @@ function Canvas() {
       const opacity =
         opacities[isForward.current ? cycle : opacities.length - 1 - cycle];
 
+      let pos = {
+        x1: 0,
+        y1: 0,
+        x2: 0,
+        y2: 0,
+      };
+
+      if (hoveringElement.current !== null) {
+        const box = hoveringElement.current.getBoundingClientRect();
+        const x1 = Math.round(box.x / 10) - 1;
+        const y1 = Math.round(box.y / 10) - 1;
+        const x2 = Math.round(box.x / 10 + box.width / 10) + 1;
+        const y2 = Math.round(box.y / 10 + box.height / 10) + 1;
+
+        pos = {
+          x1,
+          y1,
+          x2,
+          y2,
+        };
+      }
+
       for (let row = 0; row <= dots.current.length - 1; row++) {
         for (let col = 0; col <= dots.current[row].length - 1; col++) {
           const X = col * 10 + 2.5;
@@ -82,7 +104,19 @@ function Canvas() {
           const c = Math.sqrt(a * a + b * b);
           const SIZE = isClicking.current ? 60 : 40;
 
-          if (c < SIZE) context.fillStyle = `rgba(255,0,0,1)`;
+          if (hoveringElement.current === null && c < SIZE)
+            context.fillStyle = `rgba(255,0,0,1)`;
+
+          if (hoveringElement.current !== null) {
+            if (
+              row >= pos.y1 &&
+              row <= pos.y2 &&
+              col >= pos.x1 &&
+              col <= pos.x2
+            ) {
+              context.fillStyle = `rgba(255,0,0,1)`;
+            }
+          }
 
           context.fill();
         }
@@ -109,6 +143,14 @@ function Canvas() {
     window.addEventListener("pointerup", () => (isClicking.current = false));
 
     window.addEventListener("pointermove", (event) => {
+      const target = document.elementFromPoint(event.clientX, event.clientY);
+
+      if (target?.nodeName === "A") {
+        hoveringElement.current = target;
+      } else if (hoveringElement.current !== null) {
+        hoveringElement.current = null;
+      }
+
       mouse.current = { x: event.clientX, y: event.clientY };
     });
 

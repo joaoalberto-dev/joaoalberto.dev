@@ -9,7 +9,9 @@ export default function Home() {
         <Canvas />
       </div>
       <div className="relative z-10">
-        <Title>João Alberto</Title>
+        <Title>
+          <Link href="/">João Alberto</Link>
+        </Title>
         <div className="space-y-2 opacity-70 mt-8">
           <p className="leading-loose">I am a software developer.</p>
           <p className="leading-loose">
