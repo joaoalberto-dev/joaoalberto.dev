@@ -8,7 +8,7 @@ export default function Home() {
       <div className="fixed z-0 inset-0">
         <Canvas />
       </div>
-      <div className="relative z-10">
+      <div className="relative z-10 select-none">
         <Title>
           <Link href="/">João Alberto</Link>
         </Title>
