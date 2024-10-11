@@ -1,13 +1,7 @@
 import "./globals.css";
-
+import { sans, title } from "@/components/fonts";
 import { cn } from "@/utils/cn";
-
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "João Alberto",
@@ -20,20 +14,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="overscroll-none" lang="en">
+    <html className={cn(sans.variable, title.variable)} lang="en">
       <head>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
       </head>
-      <body
-        className={cn(
-          "bg-light text-dark dark:bg-dark dark:text-light",
-          inter.className
-        )}
-      >
-        <div className="max-w-[64ch] mx-auto pt-8 px-4">{children}</div>
+      <body className="font-sans">
+        <div className="min-w-dvw min-h-dvh">{children}</div>
       </body>
     </html>
   );
