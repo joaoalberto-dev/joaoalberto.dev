@@ -18,7 +18,7 @@ function HomeTitle() {
     <motion.h1
       style={{ fontSize: titleFontSize }}
       ref={container}
-      className="bg-[rgba(255,255,255,.4)] w-full font-title backdrop-blur-sm py-4 text-blue-700 sticky top-0"
+      className="col-start-1 row-start-1 lg:m-0 bg-[rgba(255,255,255,.4)] mt-[35vh] w-full font-title backdrop-blur-sm py-4 text-blue-700 sticky top-0 lg:self-end"
     >
       João Alberto
     </motion.h1>
