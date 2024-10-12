@@ -12,10 +12,10 @@ export default function CommitList({ commits }: CommitListProps) {
       <h3 className="text-blue-700">Latest Github activity</h3>
       {commits.map(({ html_url, sha, commit }) => (
         <Card key={sha} className="w-full shadow-none">
-          <CardContent className="p-4">
+          <CardContent className="p-2 lg:p-4">
             <Link href={html_url}>
-              <div className="flex items-start space-x-2">
-                <div className="flex-grow space-y-2">
+              <div className="flex items-start">
+                <div className="flex-grow space-y lg:space-y-2">
                   <p className="text-sm font-medium">{commit.message}</p>
                   <p className="text-xs text-muted-foreground">
                     Commit: {sha.substring(0, 7)}
