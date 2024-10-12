@@ -6,7 +6,7 @@ async function getLatestCommits(): Promise<Commit[]> {
     {
       headers: {
         Accept: "application/vnd.github+json",
-        Authorization: "Bearer",
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         "X-Github-Api-Version": "2022-11-28",
       },
     },
