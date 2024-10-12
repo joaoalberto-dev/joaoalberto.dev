@@ -6,10 +6,10 @@ async function getLatestCommits(): Promise<Commit[]> {
     {
       headers: {
         Accept: "application/vnd.github+json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer",
         "X-Github-Api-Version": "2022-11-28",
       },
-    }
+    },
   );
   const commits = await response.json();
 
