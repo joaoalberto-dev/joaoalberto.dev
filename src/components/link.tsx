@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import NextLink, { type LinkProps as NextLinkProps } from "next/link";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/cn";
 
 type LinkProps = NextLinkProps & {
   children: ReactNode;

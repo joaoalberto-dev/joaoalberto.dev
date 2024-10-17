@@ -1,6 +1,6 @@
 import "./globals.css";
 import { sans, title } from "@/components/fonts";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/cn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

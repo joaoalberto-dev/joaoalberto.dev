@@ -2,6 +2,7 @@ import { HomeDescription } from "@/components/home/description";
 import { HomeTitle } from "@/components/home/title";
 import { getLatestCommits } from "@/features/github/data/get-latest-commits";
 import CommitList from "@/features/github/ui/commit-list";
+import { HOUR_IN_SECONDS } from "@/lib/time";
 
 async function Home() {
   const commits = await getLatestCommits();
@@ -14,5 +15,7 @@ async function Home() {
     </main>
   );
 }
+
+export const revalidate = HOUR_IN_SECONDS;
 
 export default Home;
