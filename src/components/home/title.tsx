@@ -16,6 +16,8 @@ function HomeTitle() {
 
   return (
     <motion.h1
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       style={{ fontSize: titleFontSize }}
       ref={container}
       className="col-start-1 row-start-1 lg:m-0 bg-[rgba(255,255,255,.4)] mt-[35vh] w-full font-title backdrop-blur-sm py-4 text-blue-700 sticky top-0 lg:self-end"
