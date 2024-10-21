@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
-import { Commit } from "../types";
+import Link from "next/link";
+import type { Commit } from "../types";
 import { LastActivity } from "./last-activity";
 
 type CommitListProps = {
@@ -9,7 +9,7 @@ type CommitListProps = {
 
 export default function CommitList({ commits }: CommitListProps) {
   return (
-    <div className="mt-16 space-y-4 col-start-2 row-start-1 lg:h-[100dvh] lg:pt-16 lg:m-0 lg:overflow-y-scroll row-span-2 hide-scrollbar lg:pb-16">
+    <div className="mt-16 space-y-4 col-start-2 row-start-1 lg:h-[100dvh] lg:pt-16 lg:m-0 lg:overflow-y-scroll hide-scrollbar lg:pb-16">
       <div className="flex items-end justify-between">
         <h3 className="text-blue-700">Latest Github activity</h3>
         <LastActivity />
