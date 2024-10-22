@@ -20,7 +20,7 @@ function HomeTitle() {
 			animate={{ opacity: 1 }}
 			style={{ fontSize: titleFontSize }}
 			ref={container}
-			className="px-4 -ml-4 col-start-1 row-start-1 lg:m-0 bg-white opacity-10 mt-[35vh] w-[calc(100%+32px)] font-title py-4 text-blue-700 sticky top-0 lg:self-end"
+			className="px-4 -ml-4 col-start-1 row-start-1 lg:m-0 bg-white lg:bg-transparent lg:relative opacity-10 mt-[35vh] w-[calc(100%+32px)] font-title py-4 text-blue-700 sticky top-0 lg:self-end"
 		>
 			João Alberto
 		</motion.h1>

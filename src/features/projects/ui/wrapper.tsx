@@ -9,9 +9,9 @@ type ProjectWrapperProps = {
 
 function ProjectWrapper({ children, url }: ProjectWrapperProps) {
 	return (
-		<Link href={url}>
+		<Link className="lg:max-w-[48%] mb-8" href={url}>
 			<Card className="w-full border-none shadow-none">
-				<CardContent className="p-2 lg:p-4 space-y-4">{children}</CardContent>
+				<CardContent className="p-0 space-y-2">{children}</CardContent>
 			</Card>
 		</Link>
 	);
