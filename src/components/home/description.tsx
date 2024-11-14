@@ -1,6 +1,6 @@
 function HomeDescription() {
   return (
-    <ul className="col-start-1 row-start-2 text-gray-400 list-disc list-inside space-y-1">
+    <ul className="col-start-1 row-start-2 text-neutral-800 list-disc list-inside space-y-1">
       <li>I am a software developer</li>
       <li>I have 9 years of experience</li>
       <li>

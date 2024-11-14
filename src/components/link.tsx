@@ -1,6 +1,6 @@
-import type { ReactNode } from "react";
-import NextLink, { type LinkProps as NextLinkProps } from "next/link";
 import { cn } from "@/lib/cn";
+import NextLink, { type LinkProps as NextLinkProps } from "next/link";
+import type { ReactNode } from "react";
 
 type LinkProps = NextLinkProps & {
   children: ReactNode;
@@ -12,7 +12,7 @@ function Link({ children, href, ...props }: LinkProps) {
     <NextLink
       {...props}
       className={cn(
-        "decoration-2 underline-offset-[3px] text-accent font-semibold bg-light dark:bg-dark",
+        "decoration-2 underline-offset-[3px] text-accent font-semibold bg-brand",
         props.className
       )}
       href={href}

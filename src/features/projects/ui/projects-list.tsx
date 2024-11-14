@@ -18,7 +18,7 @@ export default function ProjectsList() {
       <div className="flex items-end justify-between">
         <h3 className="text-blue-700">Projects</h3>
       </div>
-      <div className="flex flex-wrap text-gray-400 gap-[4%]">
+      <div className="flex flex-wrap text-neutral-800 gap-[4%]">
         {projects.map((project) => {
           let content = null;
 

@@ -16,6 +16,7 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        brand: "#f9f5d7",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

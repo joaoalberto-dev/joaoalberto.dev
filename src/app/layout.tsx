@@ -1,7 +1,7 @@
-import "./globals.css";
 import { sans, title } from "@/components/fonts";
 import { cn } from "@/lib/cn";
 import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "João Alberto",
@@ -21,7 +21,7 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
       </head>
-      <body className="font-sans">
+      <body className="font-sans bg-brand">
         <div className="min-w-dvw min-h-dvh">{children}</div>
       </body>
     </html>
