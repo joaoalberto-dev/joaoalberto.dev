@@ -1,5 +1,5 @@
 import { sans, title } from "@/components/fonts";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import "./globals.css";
 
