@@ -1,13 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
-import type { Commit } from "../types";
+import { getLatestCommits } from "../data/get-latest-commits";
 import { LastActivity } from "./last-activity";
 
-type CommitListProps = {
-  commits: Commit[];
-};
+export default async function CommitList() {
+  const commits = await getLatestCommits();
 
-export default function CommitList({ commits }: CommitListProps) {
   if (commits.length === 0) {
     return null;
   }
@@ -16,7 +14,7 @@ export default function CommitList({ commits }: CommitListProps) {
     <div className="mt-16 space-y-4 col-start-2 row-start-1 lg:pt-16 lg:m-0 lg:overflow-y-scroll hide-scrollbar lg:pb-16">
       <div className="flex items-end justify-between">
         <h3 className="text-blue-700">Latest Github activity</h3>
-        <LastActivity />
+        <LastActivity commit={commits[0]} />
       </div>
       {commits.map(({ html_url, sha, commit }) => (
         <Card key={sha} className="w-full shadow-none">

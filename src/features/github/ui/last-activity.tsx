@@ -1,15 +1,12 @@
 import { formatDistanceToNow } from "date-fns";
-import { getLatestCommits } from "../data/get-latest-commits";
+import { Commit } from "../types";
 
-async function LastActivity() {
-  const commits = await getLatestCommits();
+type LastActivityProps = {
+  commit: Commit;
+};
 
-  if (commits.length === 0) {
-    return null;
-  }
-
-  const { commit } = commits[0];
-  const lastActivity = formatDistanceToNow(new Date(commit.author.date));
+async function LastActivity({ commit }: LastActivityProps) {
+  const lastActivity = formatDistanceToNow(new Date(commit.commit.author.date));
 
   return (
     <small className="text-xs text-muted-foreground">{lastActivity} ago</small>
