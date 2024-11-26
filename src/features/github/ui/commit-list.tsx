@@ -17,8 +17,8 @@ export default async function CommitList() {
         <LastActivity commit={commits[0]} />
       </div>
       {commits.map(({ html_url, sha, commit }) => (
-        <Card key={sha} className="w-full shadow-none">
-          <CardContent className="p-0 bg-background/60">
+        <Card key={sha} className="w-full bg-white/10 shadow-none">
+          <CardContent className="p-0">
             <Link className="block p-2 lg:p-4" href={html_url}>
               <div className="flex items-start">
                 <div className="flex-grow space-y lg:space-y-2">
