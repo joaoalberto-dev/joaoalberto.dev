@@ -21,8 +21,10 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
       </head>
-      <body className="font-sans bg-brand">
-        <div className="min-w-dvw min-h-dvh">{children}</div>
+      <body className="font-sans bg-brand m-auto">
+        <div className="px-4 relative">
+          {children}
+        </div>
       </body>
     </html>
   );
