@@ -11,7 +11,7 @@ import {
 import { useRef } from "react";
 
 const titleDefaultStyle = cn(
-  "fixed p-4 left-0 right-0 bg-brand/80 backdrop-blur font-title text-blue-700 lg:bg-transparent lg:p-0 lg:left-auto lg:right-auto lg:relative lg:backdrop-blur-none lg:text-[48px]"
+  "fixed p-4 left-0 right-0 bg-background/80 backdrop-blur font-title lg:bg-transparent lg:p-0 lg:left-auto lg:right-auto lg:relative lg:backdrop-blur-none lg:text-[48px]"
 );
 
 function HomeTitle() {

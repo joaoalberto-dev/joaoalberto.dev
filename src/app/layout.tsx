@@ -1,7 +1,9 @@
+import "./globals.css";
+
 import { sans, title } from "@/components/fonts";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
   title: "João Alberto",
@@ -14,17 +16,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={cn(sans.variable, title.variable)} lang="en">
+    <html
+      className={cn(sans.variable, title.variable)}
+      lang="en"
+      suppressHydrationWarning
+    >
       <head>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
       </head>
-      <body className="font-sans bg-brand m-auto">
-        <div className="px-4 relative">
-          {children}
-        </div>
+      <body className="font-sans bg-background m-auto">
+        <ThemeProvider attribute="class">
+          <div className="px-4 relative">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -11,7 +11,7 @@ function ProjectWrapper({ children, url }: ProjectWrapperProps) {
   return (
     <Link className="lg:max-w-[48%] mb-8" href={url}>
       <Card className="w-full border-none shadow-none">
-        <CardContent className="p-0 space-y-2 bg-brand text-neutral-800">
+        <CardContent className="p-0 space-y-2 bg-background">
           {children}
         </CardContent>
       </Card>

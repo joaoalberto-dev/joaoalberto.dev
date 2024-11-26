@@ -30,7 +30,7 @@ export default function VideoProject({ project }: VideoProjectProps) {
         loop
         muted
       />
-      <h3 className="font-semibold text-neutral-800">{project.title}</h3>
+      <h3 className="font-semibold">{project.title}</h3>
     </>
   );
 }
