@@ -62,16 +62,14 @@
   * {
     @apply border-border;
   }
+
+  html,
+  body,
+  #root {
+    @apply m-auto min-h-dvh w-full;
+  }
+
   body {
     @apply bg-brand text-foreground;
   }
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }
