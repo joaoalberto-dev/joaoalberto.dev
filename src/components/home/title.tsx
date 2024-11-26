@@ -1,5 +1,7 @@
 "use client";
 
+import { useMediaQuery } from "@/hooks/use-media-query";
+import { cn } from "@/lib/utils";
 import {
   motion,
   useMotionTemplate,
@@ -7,6 +9,10 @@ import {
   useTransform,
 } from "framer-motion";
 import { useRef } from "react";
+
+const titleDefaultStyle = cn(
+  "fixed p-4 left-0 right-0 bg-brand/80 backdrop-blur font-title text-blue-700 lg:bg-transparent lg:p-0 lg:left-auto lg:right-auto lg:relative lg:backdrop-blur-none lg:text-[48px]"
+);
 
 function HomeTitle() {
   const container = useRef<HTMLHeadingElement>(null);
@@ -18,13 +24,19 @@ function HomeTitle() {
   const topPosition = useTransform(scrollY, [0, 200], [200, 0]);
   const top = useMotionTemplate`${topPosition}px`;
 
+  const isLargeScreen = useMediaQuery("lg");
+
+  if (isLargeScreen) {
+    return <h1 className={titleDefaultStyle}>João Alberto</h1>;
+  }
+
   return (
     <motion.h1
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       style={{ fontSize, top, originX: 0, originY: 0.5 }}
       ref={container}
-      className="fixed p-4 left-0 right-0 bg-brand/50 backdrop-blur font-title text-blue-700"
+      className={titleDefaultStyle}
     >
       João Alberto
     </motion.h1>
