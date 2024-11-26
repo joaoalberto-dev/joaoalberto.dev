@@ -19,7 +19,7 @@ async function Home() {
           <CommitList />
         </>
       }
-    ></BasicPageLayout>
+    />
   );
 }
 
