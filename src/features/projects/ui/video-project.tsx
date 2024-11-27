@@ -5,9 +5,7 @@ import { useRef, useState, type SyntheticEvent } from "react";
 import type { Project } from "../types";
 
 type VideoProjectProps = {
-  project: Project & {
-    kind: "video";
-  };
+  project: Project;
 };
 
 export default function VideoProject({ project }: VideoProjectProps) {
@@ -35,7 +33,7 @@ export default function VideoProject({ project }: VideoProjectProps) {
       <div className="relative aspect-video">
         <video
           ref={videoRef}
-          src={project.videoUrl}
+          src={project.preview.fields.file.url}
           className="w-full aspect-video rounded-md"
           controls={false}
           autoPlay={false}
