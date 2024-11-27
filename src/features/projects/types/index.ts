@@ -4,16 +4,14 @@ type Project = {
 	title: string;
 	description: string;
 	kind: ProjectKind;
-	url: string;
-} & (
-	| {
-			kind: "video";
-			videoUrl: string;
-	  }
-	| {
-			kind: "repository";
-			repositoryUrl: string;
-	  }
-);
+	link: string;
+	preview: {
+		fields: {
+			file: {
+				url: string;
+			};
+		};
+	};
+}
 
 export type { Project };

@@ -1,18 +1,10 @@
-import type { Project } from "../types";
+import { getProjects } from "../data/get-projects";
 import VideoProject from "./video-project";
 import { ProjectWrapper } from "./wrapper";
 
-const projects: Project[] = [
-  {
-    title: "Robinhood animation built in canvas",
-    description: "",
-    kind: "video",
-    url: "https://canvas.joaoalberto.dev/robinhood",
-    videoUrl: "/videos/robinhood.webm",
-  },
-];
+export default async function ProjectsList() {
+  const projects = await getProjects();
 
-export default function ProjectsList() {
   return (
     <div className="mt-16 space-y-4 col-start-2 row-start-1 lg:pt-16 lg:m-0 lg:pb-16">
       <div className="flex items-end justify-between">
@@ -26,7 +18,7 @@ export default function ProjectsList() {
             content = <VideoProject project={project} />;
 
           return (
-            <ProjectWrapper url={project.url} key={project.url}>
+            <ProjectWrapper url={project.link} key={project.link}>
               {content}
             </ProjectWrapper>
           );
