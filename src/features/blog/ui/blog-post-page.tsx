@@ -17,6 +17,8 @@ async function BlogPostPage({ params }: BlogPostPageProps) {
   const initialCover = (blogPost?.cover?.fields?.file?.url || "") as string;
   const cover = initialCover.includes("https") ? initialCover : `https://${initialCover}`;
 
+  console.log("---cover---", { cover, initialCover });
+
   return (
     <div>
       <Bleed className="fixed top-0 z-10">
