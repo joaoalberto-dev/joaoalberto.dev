@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "João Alberto",
@@ -32,6 +33,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class">
           <div className="px-4 relative">{children}</div>
           <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
