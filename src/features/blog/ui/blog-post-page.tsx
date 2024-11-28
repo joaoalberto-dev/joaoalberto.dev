@@ -15,7 +15,7 @@ async function BlogPostPage({ params }: BlogPostPageProps) {
   const id = params.slug.split("--")[1];
   const blogPost = await getBlogPost(id);
   const initialCover = (blogPost?.cover?.fields?.file?.url || "") as string;
-  const cover = initialCover.includes("https://") ? initialCover : `https://${initialCover}`;
+  const cover = initialCover.includes("https") ? initialCover : `https://${initialCover}`;
 
   return (
     <div>
@@ -41,4 +41,3 @@ async function BlogPostPage({ params }: BlogPostPageProps) {
 }
 
 export default BlogPostPage;
-  
