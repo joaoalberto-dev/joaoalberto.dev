@@ -4,6 +4,7 @@ import { sans, title } from "@/components/fonts";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: "João Alberto",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className="font-sans bg-background m-auto">
         <ThemeProvider attribute="class">
           <div className="px-4 relative">{children}</div>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
