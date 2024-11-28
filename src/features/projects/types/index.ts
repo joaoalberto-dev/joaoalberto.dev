@@ -1,3 +1,5 @@
+import { Asset } from "contentful";
+
 type ProjectKind = "video" | "repository";
 
 type Project = {
@@ -5,13 +7,7 @@ type Project = {
 	description: string;
 	kind: ProjectKind;
 	link: string;
-	preview: {
-		fields: {
-			file: {
-				url: string;
-			};
-		};
-	};
+	preview: Asset;
 }
 
 export type { Project };

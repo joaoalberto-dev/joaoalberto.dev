@@ -28,6 +28,8 @@ export default function VideoProject({ project }: VideoProjectProps) {
     setIsPlaying(false);
   }
 
+  if (!project.preview.fields.file?.url || typeof project.preview.fields.file.url !== "string" ) return null;
+
   return (
     <>
       <div className="relative aspect-video">
