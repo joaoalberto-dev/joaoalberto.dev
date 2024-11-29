@@ -18,17 +18,20 @@ async function BlogPostPage({ params }: BlogPostPageProps) {
   const cover = initialCover.includes("https") ? initialCover : `https:${initialCover}`;
 
   return (
-    <div>
+    <div className="relative max-w-[64ch] mx-auto">
       <Bleed className="fixed top-0 z-10">
-        <nav id="navbar" className="px-2 py-4 bg-background/80 backdrop-blur flex items-center gap-2">
+        <nav id="navbar" className="bg-background/80 backdrop-blur">
+          <div className="flex items-center px-2 py-4 gap-2 max-w-[64ch] mx-auto">
+
           <Link href="/"><ArrowLeft /></Link>
           <h1 className="text-sm font-semibold font-title">{blogPost.title}</h1>
+          </div>
         </nav>
       </Bleed>
       <article className="mt-[56px] prose prose-md prose-headings:text-foreground prose-headings:font-title prose-p:text-foreground prose-neutral dark:prose-invert">
         {cover && (
           <Bleed className="-mt-[56px]">
-            <Image className="w-full max-h-[300px] object-cover" src={cover} alt={blogPost.title} width={400} height={400} />
+            <Image className="w-full max-h-[300px] mt-0 object-cover" src={cover} alt={blogPost.title} width={400} height={400} />
           </Bleed>
         )}
         <h1>{blogPost.title}</h1>
