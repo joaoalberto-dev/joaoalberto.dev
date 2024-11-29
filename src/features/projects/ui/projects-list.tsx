@@ -1,6 +1,6 @@
+import { HomeCard } from "@/components/home/card";
 import { getProjects } from "../data/get-projects";
 import VideoProject from "./video-project";
-import { ProjectWrapper } from "./wrapper";
 
 export default async function ProjectsList() {
   const projects = await getProjects();
@@ -18,9 +18,9 @@ export default async function ProjectsList() {
             content = <VideoProject project={project} />;
 
           return (
-            <ProjectWrapper url={project.link} key={project.link}>
+            <HomeCard url={project.link} key={project.link}>
               {content}
-            </ProjectWrapper>
+            </HomeCard>
           );
         })}
       </div>
