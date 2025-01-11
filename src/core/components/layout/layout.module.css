@@ -1,0 +1,13 @@
+.container {
+  margin-inline: auto;
+  max-width: 100%;
+  padding-top: 64px;
+  padding-inline: 32px;
+  width: 480px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding-inline: 0;
+  }
+}
