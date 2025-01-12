@@ -1,6 +1,7 @@
 import { Layout } from "@/core/components/layout/layout";
 import "@/core/styles/globals.css";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from "next";
 import { Onest } from "next/font/google";
 
@@ -25,6 +26,7 @@ export default function RootLayout({
           {children}
         </Layout>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
