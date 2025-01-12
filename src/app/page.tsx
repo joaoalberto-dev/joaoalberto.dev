@@ -1,3 +1,4 @@
+import { Experiences } from "@/core/components/experiences/experiences";
 import { Header } from "@/core/components/header/header";
 import { ProjectList } from "@/core/components/project-list/project-list";
 import { Project } from "@/core/components/project/project";
@@ -14,6 +15,10 @@ export default function Home() {
       <Section>
         <h3 className={text.subtitle}>Projects</h3>
         <ProjectList />
+      </Section>
+      <Section>
+        <h3 className={text.subtitle}>Experience</h3>
+        <Experiences />
       </Section>
     </div>
   );
