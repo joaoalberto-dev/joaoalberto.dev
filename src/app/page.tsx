@@ -3,6 +3,7 @@ import { Header } from "@/core/components/header/header";
 import { ProjectList } from "@/core/components/project-list/project-list";
 import { Project } from "@/core/components/project/project";
 import { Section } from "@/core/components/section/section";
+import { Social } from "@/core/components/social/social";
 import text from "@/core/styles/text.module.css";
 
 export default function Home() {
@@ -19,6 +20,9 @@ export default function Home() {
       <Section>
         <h3 className={text.subtitle}>Experience</h3>
         <Experiences />
+      </Section>
+      <Section>
+        <Social />
       </Section>
     </div>
   );
