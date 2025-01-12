@@ -25,9 +25,9 @@
 
 .small {
   color: var(--foreground-muted);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
-  line-height: 10px;
+  line-height: 12px;
   margin: 0;
   opacity: 60%;
 }
