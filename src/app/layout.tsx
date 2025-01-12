@@ -1,6 +1,6 @@
 import { Layout } from "@/core/components/layout/layout";
 import "@/core/styles/globals.css";
-
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from "next";
 import { Onest } from "next/font/google";
 
@@ -24,6 +24,7 @@ export default function RootLayout({
         <Layout>
           {children}
         </Layout>
+        <Analytics />
       </body>
     </html>
   );
