@@ -15,8 +15,6 @@ a {
 }
 
 :root {
-  --foreground: #1D1F21;
-  --foreground-muted: #7C7C7C;
-
-  --query-md: 768px;
+  --foreground: #1d1f21;
+  --foreground-muted: #7c7c7c;
 }
