@@ -1,5 +1,5 @@
 .project_list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--spacing-1);
 }
