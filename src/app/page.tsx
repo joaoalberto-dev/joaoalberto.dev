@@ -1,7 +1,6 @@
 import { Experiences } from "@/core/components/experiences/experiences";
 import { Header } from "@/core/components/header/header";
 import { ProjectList } from "@/core/components/project-list/project-list";
-import { Project } from "@/core/components/project/project";
 import { Section } from "@/core/components/section/section";
 import { Social } from "@/core/components/social/social";
 import text from "@/core/styles/text.module.css";
