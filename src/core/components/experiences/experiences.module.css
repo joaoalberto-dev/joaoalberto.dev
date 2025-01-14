@@ -4,7 +4,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  gap: 8px;
+  gap: var(--spacing-1);
   user-select: none;
 }
 
@@ -22,7 +22,7 @@
   display: none;
   flex: 1;
   height: 1px;
-  margin-inline: 32px;
+  margin-inline: var(--spacing-4);
   background-color: #d9d9d9;
   opacity: 0.2;
 }
