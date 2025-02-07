@@ -9,7 +9,7 @@ const items = [
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/joaoalberto-dev/",
+    href: "https://www.linkedin.com/in/joao-alberto-mo/",
     icon: <LinkedinIcon />,
   },
   {
