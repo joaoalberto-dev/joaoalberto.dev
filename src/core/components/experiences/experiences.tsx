@@ -7,7 +7,7 @@ const experiences = [
   { name: "MadeiraMadeira", time: "Jul 2019 → Dec 2019" },
   { name: "Critical Mass", time: "Oct 2017 → Nov 2020" },
   { name: "Personaliza", time: "Jul 2015 → Dec 2017" },
-  { name: "Volts Digital", time: "Feb 2014 → Jul 2014" }
+  { name: "Volts Digital", time: "Feb 2014 → Jul 2014" },
 ];
 
 function Experiences() {
@@ -15,7 +15,7 @@ function Experiences() {
     <ul className={styles.container}>
       {experiences.map(({ name, time }) => (
         <li className={styles.item} key={name}>
-          <h4 className={text.paragraph}>{name}</h4>
+          <h3 className={text.paragraph}>{name}</h3>
           <hr className={styles.line} />
           <p className={text.small}>{time}</p>
         </li>
