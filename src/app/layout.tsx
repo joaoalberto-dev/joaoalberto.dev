@@ -1,5 +1,6 @@
 import "@/core/styles/globals.css";
 
+import { ViewTransitions } from "next-view-transitions";
 import { Layout } from "@/core/components/layout/layout";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -21,12 +22,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${onestSans.className}`}>
-        <Layout>{children}</Layout>
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <body className={`${onestSans.className}`}>
+          <Layout>{children}</Layout>
+          <Analytics />
+          <SpeedInsights />
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
