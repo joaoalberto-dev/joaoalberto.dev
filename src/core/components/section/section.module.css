@@ -4,3 +4,12 @@
   gap: var(--spacing-2);
   margin-top: var(--section-divider);
 }
+
+.section small {
+  color: var(--foreground-muted);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 12px;
+  margin: 0;
+  opacity: 60%;
+}

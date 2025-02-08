@@ -1,7 +1,8 @@
-import { Layout } from "@/core/components/layout/layout";
 import "@/core/styles/globals.css";
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+
+import { Layout } from "@/core/components/layout/layout";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Onest } from "next/font/google";
 
@@ -22,9 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${onestSans.className}`}>
-        <Layout>
-          {children}
-        </Layout>
+        <Layout>{children}</Layout>
         <Analytics />
         <SpeedInsights />
       </body>
