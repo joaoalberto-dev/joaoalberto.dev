@@ -47,15 +47,15 @@ export default async function Home() {
         subtitle="I am a Brazilian software engineer with 10 years of experience building systems that please and scale."
       />
       <Section>
-        <h3 className={text.subtitle}>Blog</h3>
+        <h2 className={text.subtitle}>Blog</h2>
         <BlogList blogPosts={blogPosts} />
       </Section>
       <Section>
-        <h3 className={text.subtitle}>Projects</h3>
+        <h2 className={text.subtitle}>Projects</h2>
         <ProjectList />
       </Section>
       <Section>
-        <h3 className={text.subtitle}>Experience</h3>
+        <h2 className={text.subtitle}>Experience</h2>
         <Experiences />
       </Section>
       <Section>
