@@ -1,10 +1,13 @@
 import { Experiences } from "@/core/components/experiences/experiences";
 import { Header } from "@/core/components/header/header";
+import { BlogList } from "@/core/components/blog-list/blog-list";
 import { ProjectList } from "@/core/components/project-list/project-list";
 import { Section } from "@/core/components/section/section";
 import { Social } from "@/core/components/social/social";
 import text from "@/core/styles/text.module.css";
+import { getBlogPosts } from "@/core/utils/get-blog-posts";
 import { Metadata } from "next";
+import path from "path";
 
 export const metadata: Metadata = {
   title: "João Alberto",
@@ -26,18 +29,27 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "João Alberto",
-    description: "I am a Brazilian software engineer with 10 years of experience building systems that please and scale.",
+    description:
+      "I am a Brazilian software engineer with 10 years of experience building systems that please and scale.",
     images: "https://joaoalberto.dev/og.png",
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const blogPosts = getBlogPosts(
+    path.join(process.cwd(), "src", "app", "blog")
+  );
+
   return (
     <main>
       <Header
         title="João Alberto"
         subtitle="I am a Brazilian software engineer with 10 years of experience building systems that please and scale."
       />
+      <Section>
+        <h3 className={text.subtitle}>Blog</h3>
+        <BlogList blogPosts={blogPosts} />
+      </Section>
       <Section>
         <h3 className={text.subtitle}>Projects</h3>
         <ProjectList />
