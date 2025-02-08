@@ -24,6 +24,7 @@ function Social() {
     <div className={styles.container}>
       {items.map((item) => (
         <a
+          aria-label={`Find more about me on ${item.name}`}
           className={styles.item}
           key={item.href}
           href={item.href}
