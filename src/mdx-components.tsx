@@ -1,6 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import text from "./core/styles/text.module.css";
 import { H1, H2, H3, H4, H5, H6, P } from "./core/components/text/text";
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,

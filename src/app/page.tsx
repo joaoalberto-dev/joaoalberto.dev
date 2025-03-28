@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   },
   keywords: ["Software engineering", "front-end", "react"],
   authors: [{ name: "João Alberto", url: "https://joaoalberto.dev" }],
-  generator: "Next.js",
   referrer: "strict-origin-when-cross-origin",
   viewport: { width: "device-width", initialScale: 1 },
   twitter: {
