@@ -41,10 +41,7 @@ export default async function Home() {
 
   return (
     <main>
-      <Header
-        title="João Alberto"
-        subtitle="I am a Brazilian software engineer with 10 years of experience building systems that please and scale."
-      />
+      <Header title="João Alberto" />
       <Section>
         <h2 className={text.subtitle}>Blog</h2>
         <BlogList blogPosts={blogPosts} />
