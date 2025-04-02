@@ -15,7 +15,7 @@ function Experiences() {
     <ul className={styles.container}>
       {experiences.map(({ name, time }) => (
         <li className={styles.item} key={name}>
-          <h3 className={text.paragraph}>{name}</h3>
+          <p className={text.paragraph}>{name}</p>
           <hr className={styles.line} />
           <p className={text.small}>{time}</p>
         </li>

@@ -10,7 +10,11 @@ type ProjectProps = {
 
 function Project({ children, href }: ProjectProps) {
   return (
-    <a href={href} className={cn(text.small, styles.project)} target="_blank">
+    <a
+      href={href}
+      className={cn(text.paragraph, styles.project)}
+      target="_blank"
+    >
       {children}
     </a>
   );
