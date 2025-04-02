@@ -5,10 +5,11 @@ import { Layout } from "@/core/components/layout/layout";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Onest } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const onestSans = Onest({
+const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en">
-        <body className={`${onestSans.className}`}>
+        <body className={`${inter.className}`}>
           <Layout>{children}</Layout>
           <Analytics />
           <SpeedInsights />
