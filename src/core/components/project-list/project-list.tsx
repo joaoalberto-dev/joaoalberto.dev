@@ -7,14 +7,6 @@ const projects = [
     name: "joaoalberto.dev",
     href: "https://github.com/joaoalberto-dev/joaoalberto.dev",
   },
-  {
-    name: "endless-notes",
-    href: "https://github.com/joaoalberto-dev/endless-notes",
-  },
-  {
-    name: "mini-video-editor",
-    href: "https://github.com/joaoalberto-dev/mini-video-editor",
-  },
 ];
 
 function ProjectList() {
