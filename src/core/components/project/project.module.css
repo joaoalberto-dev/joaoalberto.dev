@@ -2,6 +2,7 @@
   border-bottom: 1px solid var(--border);
   display: inline-block;
   padding: var(--spacing-3);
+  padding-inline: var(--spacing-4);
 }
 
 .project:nth-child(odd) {
