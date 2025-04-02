@@ -6,12 +6,14 @@ import styles from "./project.module.css";
 type ProjectProps = {
   children: ReactNode;
   href: string;
-}
+};
 
 function Project({ children, href }: ProjectProps) {
   return (
-    <a href={href} className={cn(text.small, styles.project)} target="_blank">{children}</a>
-  )
+    <a href={href} className={cn(text.small, styles.project)} target="_blank">
+      {children}
+    </a>
+  );
 }
 
 export { Project };

@@ -1,6 +1,17 @@
 .project {
+  border-bottom: 1px solid var(--border);
   display: inline-block;
   padding: var(--spacing-3);
-  border: 1px solid #d9d9d9;
-  border-radius: var(--spacing-2);
+}
+
+.project:nth-child(odd) {
+  border-right: 1px solid var(--border);
+}
+
+.project:nth-last-child(n + 2) {
+  border-top: 1px solid var(--border);
+}
+
+.project:nth-last-child(-n + 2) {
+  border-bottom: 1px solid var(--border);
 }
