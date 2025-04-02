@@ -3,3 +3,12 @@
   flex-direction: column;
   gap: var(--spacing-1);
 }
+
+.blog_item {
+  padding: var(--spacing-3);
+  padding-inline: var(--spacing-4);
+}
+
+.blog_item:hover {
+  background-color: var(--background-muted);
+}

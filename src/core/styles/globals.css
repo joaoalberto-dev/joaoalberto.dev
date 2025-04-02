@@ -19,6 +19,8 @@ a {
   --foreground: #1d1f21;
   --foreground-muted: #7c7c7c;
   --border: #efefef;
+  --background: #ffffff;
+  --background-muted: #fafafa;
 
   /* Spacing */
   --spacing-1: 8px;

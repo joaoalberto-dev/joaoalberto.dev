@@ -1,24 +1,13 @@
 .project {
-  border-bottom: 1px solid var(--border);
   display: inline-block;
   padding: var(--spacing-3);
   padding-inline: var(--spacing-4);
 }
 
-.project:nth-child(odd) {
-  border-right: 1px solid var(--border);
-}
-
-.project:nth-last-child(n + 2),
-.project:only-child {
-  border-top: 1px solid var(--border);
+.project:hover {
+  background-color: var(--background-muted);
 }
 
 .project:only-child {
   grid-column: span 2;
-  border-right: none;
-}
-
-.project:nth-last-child(-n + 2) {
-  border-bottom: 1px solid var(--border);
 }
