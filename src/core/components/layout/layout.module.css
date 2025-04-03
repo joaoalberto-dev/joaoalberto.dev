@@ -1,12 +1,18 @@
 .container {
   margin-inline: auto;
   max-width: 100%;
-  padding: var(--spacing-4);
+  padding-inline: var(--spacing-4);
+  position: relative;
   width: 640px;
 }
 
 .nav {
-  margin-bottom: var(--spacing-4);
+  left: 0;
+  padding: var(--spacing-2) var(--spacing-4);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 @media screen and (min-width: 768px) {
