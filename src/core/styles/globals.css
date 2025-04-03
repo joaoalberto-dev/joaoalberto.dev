@@ -34,3 +34,7 @@ a {
   margin-left: calc(-1 * var(--spacing-4));
   width: calc(100% + 2 * var(--spacing-4));
 }
+
+.internal .header {
+  padding-top: calc(var(--spacing-4) * 2);
+}
