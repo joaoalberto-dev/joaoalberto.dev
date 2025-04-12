@@ -9,7 +9,8 @@ type CanvasBackgroundProps = {
 
 function CanvasBackground({ parentRef }: CanvasBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const mousePositionRef = useRef({ x: 0, y: 0 });
+  const mousePositionRef = useRef({ x: 1000, y: 1000 });
+  const isMouseOverRef = useRef(false);
 
   useEffect(() => {
     const parent = parentRef.current;
@@ -21,10 +22,23 @@ function CanvasBackground({ parentRef }: CanvasBackgroundProps) {
     canvas.width = width;
     canvas.height = height;
 
+    mousePositionRef.current = { x: width / 2, y: height / 2 };
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const handleMouseLeave = () => {
+      isMouseOverRef.current = false;
+      mousePositionRef.current = { x: canvas.width / 2, y: canvas.height / 2 };
+    };
+
+    const handleMouseEnter = () => {
+      isMouseOverRef.current = true;
+    };
+
     const handleMouseMove = (e: MouseEvent) => {
+      if (!isMouseOverRef.current) return;
+
       const rect = canvas.getBoundingClientRect();
       mousePositionRef.current = {
         x: e.clientX - rect.left,
@@ -33,6 +47,8 @@ function CanvasBackground({ parentRef }: CanvasBackgroundProps) {
     };
 
     parentRef.current?.addEventListener("mousemove", handleMouseMove);
+    parentRef.current?.addEventListener("mouseenter", handleMouseEnter);
+    parentRef.current?.addEventListener("mouseleave", handleMouseLeave);
 
     function draw(
       canvas: HTMLCanvasElement,
@@ -48,7 +64,7 @@ function CanvasBackground({ parentRef }: CanvasBackgroundProps) {
 
       const numCircles = 30;
       const baseRadius = 20;
-      const radiusIncrement = 30;
+      const radiusIncrement = 60;
       const animationSpeed = 0.001;
 
       for (let i = 0; i < numCircles; i++) {
@@ -57,7 +73,7 @@ function CanvasBackground({ parentRef }: CanvasBackgroundProps) {
           i * radiusIncrement +
           Math.sin(time * animationSpeed) * 20;
 
-        const influence = 0.5;
+        const influence = 0.3;
         const circleX = mouseX + (canvas.width / 2 - mouseX) * (1 - influence);
         const circleY = mouseY + (canvas.height / 2 - mouseY) * (1 - influence);
 
@@ -73,6 +89,8 @@ function CanvasBackground({ parentRef }: CanvasBackgroundProps) {
 
     return () => {
       parentRef.current?.removeEventListener("mousemove", handleMouseMove);
+      parentRef.current?.removeEventListener("mouseenter", handleMouseEnter);
+      parentRef.current?.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
