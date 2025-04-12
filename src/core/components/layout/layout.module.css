@@ -1,6 +1,7 @@
 .container {
   margin-inline: auto;
   max-width: 100%;
+  padding-bottom: var(--spacing-4);
   padding-inline: var(--spacing-4);
   position: relative;
   width: 640px;
