@@ -8,6 +8,7 @@ import text from "@/core/styles/text.module.css";
 import { getBlogPosts } from "@/core/utils/get-blog-posts";
 import { Metadata } from "next";
 import path from "path";
+import { H2 } from "@/core/components/text/text";
 
 export const metadata: Metadata = {
   title: "João Alberto",
@@ -43,15 +44,15 @@ export default async function Home() {
     <main>
       <Header title="João Alberto" />
       <Section>
-        <h2 className={text.subtitle}>Blog</h2>
+        <H2>Blog</H2>
         <BlogList blogPosts={blogPosts} />
       </Section>
       <Section>
-        <h2 className={text.subtitle}>Projects</h2>
+        <H2>Projects</H2>
         <ProjectList />
       </Section>
       <Section>
-        <h2 className={text.subtitle}>Experience</h2>
+        <H2>Experience</H2>
         <Experiences />
       </Section>
       <Section>
