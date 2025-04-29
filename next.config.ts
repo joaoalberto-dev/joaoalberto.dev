@@ -1,13 +1,23 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 
-const withMDX = createMDX({});
+const withMDX = createMDX({
+  options: {
+    rehypePlugins: [
+      // @ts-expect-error
+      ["rehype-slug", { strict: true, throwOnError: true }],
+      // @ts-expect-error
+      ["rehype-autolink-headings", { strict: true, throwOnError: true }],
+    ],
+    remarkPlugins: [
+      // @ts-expect-error
+      ["remark-gfm", { strict: true, throwOnError: true }],
+    ],
+  },
+});
 
 const nextConfig: NextConfig = {
   pageExtensions: ["mdx", "ts", "tsx"],
-  experimental: {
-    mdxRs: true,
-  },
 };
 
 export default withMDX(nextConfig);
