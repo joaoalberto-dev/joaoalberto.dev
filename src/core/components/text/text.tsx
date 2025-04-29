@@ -5,11 +5,11 @@ export function P({ children }: { children: React.ReactNode }) {
 }
 
 export function H1({ children }: { children: React.ReactNode }) {
-  return <h1 id="title" className={text.title}>{children}</h1>;
+  return <h1 className={text.title}>{children}</h1>;
 }
 
 export function H2({ children }: { children: React.ReactNode }) {
-  return <h2 id="subtitle" className={text.subtitle}>{children}</h2>;
+  return <h2 className={text.subtitle}>{children}</h2>;
 }
 
 export function H3({ children }: { children: React.ReactNode }) {
