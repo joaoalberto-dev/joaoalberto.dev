@@ -7,14 +7,9 @@ import { Social } from "@/core/components/social/social";
 import { H2 } from "@/core/components/text/text";
 import { appConfig } from "@/core/config/app";
 import { metaConfig } from "@/core/config/meta";
+import { viewportConfig } from "@/core/config/viewport";
 import { getBlogPosts } from "@/core/utils/get-blog-posts";
-import { Metadata } from "next";
 import path from "path";
-
-export const metadata: Metadata = {
-  ...appConfig,
-  ...metaConfig,
-};
 
 export default async function Home() {
   const blogPosts = getBlogPosts(
@@ -42,3 +37,9 @@ export default async function Home() {
     </main>
   );
 }
+
+export const viewport = viewportConfig;
+export const metadata = {
+  ...appConfig,
+  ...metaConfig,
+};

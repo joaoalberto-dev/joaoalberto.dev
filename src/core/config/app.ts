@@ -8,5 +8,4 @@ export const appConfig: AppMetadata = {
   keywords: ["Software engineering", "front-end", "react"],
   authors: [{ name: "João Alberto", url: "https://joaoalberto.dev" }],
   referrer: "strict-origin-when-cross-origin",
-  viewport: { width: "device-width", initialScale: 1 },
 };
