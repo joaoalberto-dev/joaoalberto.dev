@@ -3,8 +3,8 @@ import { AppMetadata } from "./type";
 export const metaConfig: Partial<AppMetadata> = {
   twitter: {
     card: "summary_large_image",
-    site: "@joaoalberto",
-    creator: "@joaoalberto",
+    site: "@joaoalbertodev",
+    creator: "@joaoalbertodev",
     images: "https://joaoalberto.dev/og.png",
   },
   openGraph: {
