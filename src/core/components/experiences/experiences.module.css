@@ -9,9 +9,9 @@
 }
 
 .item {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .item:hover .line {
@@ -28,5 +28,12 @@
 }
 
 .time {
+    font-variant-numeric: tabular-nums;
     opacity: 70%;
+}
+
+@media screen and (max-width: 768px) {
+    .item {
+        pointer-events: none;
+    }
 }
