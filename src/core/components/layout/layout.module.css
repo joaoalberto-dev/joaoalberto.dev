@@ -1,25 +1,23 @@
 .container {
-  margin-inline: auto;
-  max-width: 100%;
-  padding-bottom: var(--spacing-4);
-  padding-inline: var(--spacing-4);
-  position: relative;
-  width: 640px;
+    margin-inline: auto;
+    max-width: 100%;
+    padding-bottom: var(--spacing-4);
+    padding-inline: var(--spacing-4);
+    position: relative;
+    width: 640px;
 }
 
 .nav {
-  left: 0;
-  padding: var(--spacing-2) var(--spacing-4);
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 100;
+    left: 0;
+    padding: var(--spacing-2) var(--spacing-4);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 @media screen and (min-width: 768px) {
-  .container {
-    border-left: 1px solid var(--border);
-    border-right: 1px solid var(--border);
-    min-height: 100dvh;
-  }
+    .container {
+        min-height: 100dvh;
+    }
 }

@@ -17,7 +17,7 @@ export default async function Home() {
   );
 
   return (
-    <main>
+    <>
       <Header title={appConfig.title} />
       <Section>
         <H2>Blog</H2>
@@ -34,7 +34,7 @@ export default async function Home() {
       <Section>
         <Social />
       </Section>
-    </main>
+    </>
   );
 }
 

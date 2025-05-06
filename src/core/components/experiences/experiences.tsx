@@ -1,5 +1,6 @@
 import text from "@/core/styles/text.module.css";
 import styles from "./experiences.module.css";
+import { cn } from "@/core/utils/cn";
 
 const experiences = [
   { name: "Fluency Academy", time: "Mar 2022 → now" },
@@ -17,7 +18,7 @@ function Experiences() {
         <li className={styles.item} key={name}>
           <p className={text.paragraph}>{name}</p>
           <hr className={styles.line} />
-          <p className={text.small}>{time}</p>
+          <p className={cn(text.small, styles.time)}>{time}</p>
         </li>
       ))}
     </ul>
