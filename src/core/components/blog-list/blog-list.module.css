@@ -5,6 +5,7 @@
 }
 
 .blog_item {
+    border: 1px solid transparent;
     border-radius: var(--spacing-1);
     padding: var(--spacing-3);
     padding-inline: var(--spacing-4);
@@ -12,4 +13,5 @@
 
 .blog_item:hover {
     background-color: var(--background-muted);
+    border-color: var(--border);
 }
