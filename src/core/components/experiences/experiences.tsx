@@ -3,7 +3,7 @@ import styles from "./experiences.module.css";
 import { cn } from "@/core/utils/cn";
 
 const experiences = [
-  { name: "Fluency Academy", time: "Mar 2022 → Apr 2025" },
+  { name: "Fluency Academy", time: "Mar 2022 → Now" },
   { name: "PixelWolf", time: "Mar 2020 → Mar 2022" },
   { name: "MadeiraMadeira", time: "Jul 2019 → Dec 2019" },
   { name: "Critical Mass", time: "Oct 2017 → Nov 2020" },
