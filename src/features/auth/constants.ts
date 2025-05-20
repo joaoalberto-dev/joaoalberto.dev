@@ -1,0 +1,17 @@
+const GITHUB_ACCESS_TOKEN_PATH = "login/oauth/access_token";
+const GITHUB_AUTHORIZE_PATH = "login/oauth/authorize";
+const GITHUB_BASE_URL = "https://github.com/";
+const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
+const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
+const GITHUB_REDIRECT_URL = process.env.GITHUB_REDIRECT_URL;
+const GITHUB_SCOPE = "read:user";
+
+export {
+  GITHUB_ACCESS_TOKEN_PATH,
+  GITHUB_AUTHORIZE_PATH,
+  GITHUB_BASE_URL,
+  GITHUB_CLIENT_ID,
+  GITHUB_CLIENT_SECRET,
+  GITHUB_REDIRECT_URL,
+  GITHUB_SCOPE,
+};
