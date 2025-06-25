@@ -5,7 +5,7 @@ import { Metadata } from "next";
 export const metadata = {
   title: "Tips for Engineers",
   description:
-    "This is a (living) list of some thoughts I collected over the years about how to be a good software engineer.",
+    "This is a living list of some thoughts I collected over the years about how to be a good software engineer.",
   alternates: {
     canonical: "/blog/tips-for-engineers",
   },
@@ -17,29 +17,55 @@ export const metadata = {
 />
 
 <Section>
-  ## Don't get blocked.
-  
-  This is one of the most important things you can do for
-  your career, if you ever get blocked, learn how to unblock yourself or ask for
-  help as fast as possible, one of worst thinkgs you can do is wait the next
-  daily to ask what to do.
+    ## Don't get blocked
+
+    Learn to unblock yourself no matter what, by making a decision, by asking for help fast, by not trying to be perfectionist.
 </Section>
 
 <Section>
-  ## Don't leave TODOs
-  
-  If you keep your TODOs only in the code, I'm pretty sure you will forget it before next week.
-  If it is simple to solve (1h or less), create a ticket and just do it.
-  If it is not, create a ticket and put it in the backlog.
+    ## Don't block others
+
+    Make information public, DMs are the enemy. Ensure everything is properly documented; this can help people to make decisions without even needing to contact you.
 </Section>
 
 <Section>
-  ## Small PRs are the key
-  
-  You probably already heard this, nothing new under the sun.
-  Small PRs are easier to review, easier to test, easier to deploy and easier to revert.
-  If you are working on a big refactor or feature, create a "umbrella" branch for this change and then create many more small branches pointing to it.
-  This way you can keep the code review simple by delivering small pieces of change in each branch.
+    ## Give it five minutes
 
-  <small>I call it "umbrella" because it cover all small branches necessary for a big change</small>
+    Sometimes you just need a small break before giving your opinion, thats fine. Not everything should be instantaneous.
+</Section>
+
+<Section>
+    ## Learn to make decisions
+
+    Soon or later you will need to make decisions, alone or in group, with or without pressure, when this happesn, it’s important to have context enough to make the right decision (Sometimes you will make the wrong decision and this is fine, if you learn with it)
+</Section>
+
+<Section>
+    ## Be a scout, leave the place you are in better than when you arrived
+
+    This applies to everything; your code, your docs, your desk. Make it better than when you arrived.
+</Section>
+
+<Section>
+    ## No abstraction is better than the wrong abstraction
+
+    Not everthing should be abstracted, it’s fine to have two functions that look the same if you don’t know where to put it yet.
+</Section>
+
+<Section>
+    ## Be present
+
+    If you are in a meeting, one of the worst things you can do is not paying enough attention, this will waste everyone’s time, put your phone in silence mode, ignore that slack message for a few minutes, it’s ok.
+</Section>
+
+<Section>
+    ## Listen your data
+
+    In all my years of software development this happened countless times, you ask your user for feedback and they answer “I prefer X” but then you look at your data and the user is actually doing Y, they are not lying, they just maybe don’t know what they want yet.
+</Section>
+
+<Section>
+    ## Software is meant to be fast. Play like a champion.
+
+    Known your data sctructures and algorithms and learn to optimize them, if you are working with one hundred items maybe it’s fine to brute force the solution sometimes, but make sure you undestand the consequences and how to deal with them.
 </Section>
