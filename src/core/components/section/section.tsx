@@ -1,14 +1,12 @@
-import { ReactNode } from "react"
-import styles from "./section.module.css"
+import { ReactNode } from "react";
+import styles from "./section.module.css";
 
 type SectionProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 function Section({ children }: SectionProps) {
-  return (
-    <div className={styles.section}>{children}</div>
-  )
+  return <section className={styles.section}>{children}</section>;
 }
 
-export { Section }
+export { Section };
