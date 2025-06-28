@@ -52,3 +52,8 @@ a {
 .internal .header {
     padding-top: calc(var(--spacing-4) * 4);
 }
+
+.monaco-editor,
+.overflow-guard {
+    border-radius: var(--spacing-2);
+}
