@@ -16,6 +16,7 @@
     "@types/mdx": "^2.0.13",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
+    "monaco-editor": "^0.52.2",
     "monaco-themes": "^0.4.5",
     "next": "^15.4.0-canary.102",
     "next-view-transitions": "^0.3.4",
