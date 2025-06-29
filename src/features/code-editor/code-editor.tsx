@@ -6,11 +6,12 @@ import ghDark from "monaco-themes/themes/GitHub Dark.json";
 import ghLight from "monaco-themes/themes/GitHub Light.json";
 import styles from "./code-editor.module.css";
 
-const code = `function x() {
-  console.log("Hello world!");
-}`;
+type Props = {
+  code: string;
+  onChange: (code: string) => void;
+};
 
-function CodeEditor() {
+function CodeEditor({ code, onChange }: Props) {
   const mode = useColorMode();
 
   const beforeMount = (monaco: typeof import("monaco-editor")) => {
@@ -47,6 +48,7 @@ function CodeEditor() {
         defaultLanguage="javascript"
         defaultValue={code}
         beforeMount={beforeMount}
+        onChange={onChange}
       />
     </div>
   );
