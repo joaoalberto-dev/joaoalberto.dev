@@ -48,7 +48,7 @@ function CodeEditor({ code, onChange }: Props) {
         defaultLanguage="javascript"
         defaultValue={code}
         beforeMount={beforeMount}
-        onChange={onChange}
+        onChange={(code) => onChange(code || "")}
       />
     </div>
   );
