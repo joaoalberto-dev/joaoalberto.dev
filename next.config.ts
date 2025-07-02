@@ -6,8 +6,8 @@ const withMDX = createMDX({
     rehypePlugins: [
       // @ts-expect-error
       ["rehype-slug", { strict: true, throwOnError: true }],
-      // @ts-expect-error
       [
+        // @ts-expect-error
         "rehype-autolink-headings",
         { strict: true, throwOnError: true, behavior: "wrap" },
       ],
