@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github, Linkedin, RightArrow, X } from "@/core/icons";
+import { Section } from "@/core/components/section/section";
 
 const socials = [
   { Image: Github, name: "Github", link: "https://github.com/joaoalberto-dev" },
@@ -60,8 +61,7 @@ export default function Home() {
           </Link>
         ))}
       </nav>
-      <section className="flex flex-col gap-4">
-        <h2 className="font-semibold leading-4 opacity-80">Projects</h2>
+      <Section title="Projects">
         <ul className="flex flex-col gap-2">
           {projects.map((project) => (
             <li key={project.link}>
@@ -78,9 +78,8 @@ export default function Home() {
             </li>
           ))}
         </ul>
-      </section>
-      <section className="flex flex-col gap-4">
-        <h2 className="font-semibold leading-4 opacity-80">Blog</h2>
+      </Section>
+      <Section title="Blog">
         <ul className="flex flex-col gap-2">
           {blogs.map((blog) => (
             <li key={blog.link}>
@@ -93,9 +92,8 @@ export default function Home() {
             </li>
           ))}
         </ul>
-      </section>
-      <section className="flex flex-col gap-4">
-        <h2 className="font-semibold leading-4 opacity-80">Experiences</h2>
+      </Section>
+      <Section title="Experience">
         <ul className="flex flex-col gap-2">
           {experiences.map((experience) => (
             <li
@@ -107,7 +105,7 @@ export default function Home() {
             </li>
           ))}
         </ul>
-      </section>
+      </Section>
     </main>
   );
 }
