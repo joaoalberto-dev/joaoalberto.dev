@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Github, Linkedin, X } from "@/core/icons";
-import { Section } from "@/core/components/section/section";
 import { ProjectsList } from "@/features/projects-list/projects-list";
 import { BlogList } from "@/features/blog-list/blog-list";
+import { ExperiencesList } from "@/features/experiences-list/expetiences-list";
 
 const socials = [
   { Image: Github, name: "Github", link: "https://github.com/joaoalberto-dev" },
@@ -58,19 +58,7 @@ export default function Home() {
       </nav>
       <ProjectsList />
       <BlogList />
-      <Section title="Experience">
-        <ul className="flex flex-col gap-2">
-          {experiences.map((experience) => (
-            <li
-              className="flex justify-between items-center"
-              key={experience.name}
-            >
-              <span>{experience.name}</span>
-              <span className="font-serif opacity-50">{experience.time}</span>
-            </li>
-          ))}
-        </ul>
-      </Section>
+      <ExperiencesList />
     </main>
   );
 }
