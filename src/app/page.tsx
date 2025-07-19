@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Github, Linkedin, RightArrow, X } from "@/core/icons";
+import { Github, Linkedin, X } from "@/core/icons";
 import { Section } from "@/core/components/section/section";
+import { ProjectsList } from "@/features/projects-list/projects-list";
 
 const socials = [
   { Image: Github, name: "Github", link: "https://github.com/joaoalberto-dev" },
@@ -10,13 +11,6 @@ const socials = [
     link: "https://www.linkedin.com/in/joao-alberto-mo/",
   },
   { Image: X, name: "X", link: "https://x.com/joaoalbertodev" },
-];
-
-const projects = [
-  {
-    name: "My portfolio",
-    link: "https://github.com/joaoalberto-dev/joaoalberto.dev",
-  },
 ];
 
 const blogs = [
@@ -61,24 +55,7 @@ export default function Home() {
           </Link>
         ))}
       </nav>
-      <Section title="Projects">
-        <ul className="flex flex-col gap-2">
-          {projects.map((project) => (
-            <li key={project.link}>
-              <Link
-                className="-ml-4 outline-0 font-sans text-base leading-4 w-[calc(100%+32px)] flex justify-between group focus:bg-amber-100 hover:bg-amber-100 px-4 py-4 items-center rounded-lg border border-transparent focus:border-amber-800/20 hover:border-amber-800/20"
-                href={project.link}
-                target="_blank"
-              >
-                <span>{project.name}</span>
-                <span className="hidden group-focus:inline group-hover:inline">
-                  <RightArrow />
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Section>
+      <ProjectsList />
       <Section title="Blog">
         <ul className="flex flex-col gap-2">
           {blogs.map((blog) => (
