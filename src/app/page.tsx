@@ -60,7 +60,7 @@ export default function Home() {
           </Link>
         ))}
       </nav>
-      <section className="flex flex-col gap-8">
+      <section className="flex flex-col gap-4">
         <h2 className="font-semibold leading-4 opacity-80">Projects</h2>
         <ul className="flex flex-col gap-2">
           {projects.map((project) => (
@@ -79,7 +79,7 @@ export default function Home() {
           ))}
         </ul>
       </section>
-      <section className="flex flex-col gap-8">
+      <section className="flex flex-col gap-4">
         <h2 className="font-semibold leading-4 opacity-80">Blog</h2>
         <ul className="flex flex-col gap-2">
           {blogs.map((blog) => (
@@ -94,7 +94,7 @@ export default function Home() {
           ))}
         </ul>
       </section>
-      <section className="flex flex-col gap-8">
+      <section className="flex flex-col gap-4">
         <h2 className="font-semibold leading-4 opacity-80">Experiences</h2>
         <ul className="flex flex-col gap-2">
           {experiences.map((experience) => (
