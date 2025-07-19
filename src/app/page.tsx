@@ -3,6 +3,7 @@ import { Github, Linkedin, X } from "@/core/icons";
 import { ProjectsList } from "@/features/projects-list/projects-list";
 import { BlogList } from "@/features/blog-list/blog-list";
 import { ExperiencesList } from "@/features/experiences-list/expetiences-list";
+import { Social } from "@/features/social/social";
 
 const socials = [
   { Image: Github, name: "Github", link: "https://github.com/joaoalberto-dev" },
@@ -48,14 +49,7 @@ export default function Home() {
           applications.
         </p>
       </header>
-      <nav className="flex gap-8">
-        {socials.map(({ link, Image, name }) => (
-          <Link href={link} key={link} target="_blank" title={name}>
-            <Image />
-            <span className="sr-only">{name}</span>
-          </Link>
-        ))}
-      </nav>
+      <Social />
       <ProjectsList />
       <BlogList />
       <ExperiencesList />
