@@ -4,6 +4,7 @@ import { ProjectsList } from "@/features/projects-list/projects-list";
 import { BlogList } from "@/features/blog-list/blog-list";
 import { ExperiencesList } from "@/features/experiences-list/expetiences-list";
 import { Social } from "@/features/social/social";
+import { Header } from "@/core/header/header";
 
 const socials = [
   { Image: Github, name: "Github", link: "https://github.com/joaoalberto-dev" },
@@ -36,19 +37,19 @@ const experiences = [
 export default function Home() {
   return (
     <main className="flex flex-col gap-y-16 max-w-[420px] mx-auto">
-      <header className="flex flex-col gap-4">
-        <h1 className="font-sans leading-4 font-bold text-amber-950">
-          João Alberto
-        </h1>
-        <p className="opacity-50 font-serif leading-5">
-          I'm a Brazilian software engineer interested in all aspects of
-          computing and human–computer interaction.
-          <br />
-          <br />I have over 10 years of experience building software that lasts,
-          scales, and delights users, from simple blogs to real-time
-          applications.
-        </p>
-      </header>
+      <Header
+        title="João Alberto"
+        description={
+          <>
+            I'm a Brazilian software engineer interested in all aspects of
+            computing and human–computer interaction.
+            <br />
+            <br />I have over 10 years of experience building software that
+            lasts, scales, and delights users, from simple blogs to real-time
+            applications.
+          </>
+        }
+      />
       <Social />
       <ProjectsList />
       <BlogList />
