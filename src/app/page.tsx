@@ -1,38 +1,8 @@
-import Link from "next/link";
-import { Github, Linkedin, X } from "@/core/icons";
-import { ProjectsList } from "@/features/projects-list/projects-list";
+import { Header } from "@/core/header/header";
 import { BlogList } from "@/features/blog-list/blog-list";
 import { ExperiencesList } from "@/features/experiences-list/expetiences-list";
+import { ProjectsList } from "@/features/projects-list/projects-list";
 import { Social } from "@/features/social/social";
-import { Header } from "@/core/header/header";
-
-const socials = [
-  { Image: Github, name: "Github", link: "https://github.com/joaoalberto-dev" },
-  {
-    Image: Linkedin,
-    name: "Linkedin",
-    link: "https://www.linkedin.com/in/joao-alberto-mo/",
-  },
-  { Image: X, name: "X", link: "https://x.com/joaoalbertodev" },
-];
-
-const blogs = [
-  {
-    title: "Tips for engineers",
-    link: "/blog/tips-for-engineers",
-    description:
-      "This is a list of some thoughts I collected over the years about how to be a good software engineer.",
-  },
-];
-
-const experiences = [
-  { name: "Fluency Academy", time: "Mar 2022 → Now" },
-  { name: "PixelWolf", time: "Mar 2020 → Mar 2022" },
-  { name: "MadeiraMadeira", time: "Jul 2019 → Dec 2019" },
-  { name: "Critical Mass", time: "Oct 2017 → Nov 2020" },
-  { name: "Personaliza", time: "Jul 2015 → Dec 2017" },
-  { name: "Volts Digital", time: "Feb 2014 → Jul 2014" },
-];
 
 export default function Home() {
   return (
