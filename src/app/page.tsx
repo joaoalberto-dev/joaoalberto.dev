@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Github, Linkedin, X } from "@/core/icons";
 import { Section } from "@/core/components/section/section";
 import { ProjectsList } from "@/features/projects-list/projects-list";
+import { BlogList } from "@/features/blog-list/blog-list";
 
 const socials = [
   { Image: Github, name: "Github", link: "https://github.com/joaoalberto-dev" },
@@ -56,20 +57,7 @@ export default function Home() {
         ))}
       </nav>
       <ProjectsList />
-      <Section title="Blog">
-        <ul className="flex flex-col gap-2">
-          {blogs.map((blog) => (
-            <li key={blog.link}>
-              <Link className="flex flex-col gap-2" href={blog.link}>
-                <span>{blog.title}</span>
-                <span className="font-serif leading-5 opacity-50">
-                  {blog.description}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Section>
+      <BlogList />
       <Section title="Experience">
         <ul className="flex flex-col gap-2">
           {experiences.map((experience) => (
