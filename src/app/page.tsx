@@ -1,4 +1,4 @@
-import { Header } from "@/core/header/header";
+import { Header } from "@/core/components/header/header";
 import { BlogList } from "@/features/blog-list/blog-list";
 import { ExperiencesList } from "@/features/experiences-list/expetiences-list";
 import { ProjectsList } from "@/features/projects-list/projects-list";
