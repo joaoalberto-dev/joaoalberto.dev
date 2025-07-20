@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Layout } from "@/core/components/layout/layout";
 import type { Metadata } from "next";
 import { Instrument_Sans, Alice } from "next/font/google";
 
@@ -28,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${fontSans.variable} ${fontSerif.variable} antialiased text-base bg-amber-50 text-amber-950 py-32 px-8`}
       >
-        {children}
+        <Layout>{children}</Layout>
       </body>
     </html>
   );
