@@ -1,12 +1,15 @@
 import { ReactNode } from "react";
-import styles from "./section.module.css";
 
-type SectionProps = {
+export type SectionProps = {
   children: ReactNode;
+  title: string;
 };
 
-function Section({ children }: SectionProps) {
-  return <section className={styles.section}>{children}</section>;
+export function Section({ title, children }: SectionProps) {
+  return (
+    <section className="flex flex-col gap-4">
+      <h2 className="font-semibold leading-4 opacity-80">{title}</h2>
+      <div>{children}</div>
+    </section>
+  );
 }
-
-export { Section };

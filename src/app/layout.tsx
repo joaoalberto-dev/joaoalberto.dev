@@ -1,15 +1,17 @@
-import "@/core/styles/globals.css";
-
-import { ViewTransitions } from "next-view-transitions";
+import "./globals.css";
 import { Layout } from "@/core/components/layout/layout";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Instrument_Sans, Alice } from "next/font/google";
 
-const inter = Inter({
+const fontSans = Instrument_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
+});
+
+const fontSerif = Alice({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -23,14 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ViewTransitions>
-      <html lang="en">
-        <body className={`${inter.className}`}>
-          <Layout>{children}</Layout>
-          <Analytics />
-          <SpeedInsights />
-        </body>
-      </html>
-    </ViewTransitions>
+    <html lang="en">
+      <body
+        className={`${fontSans.variable} ${fontSerif.variable} antialiased text-base bg-amber-50 text-amber-950 py-32 px-8`}
+      >
+        <Layout>{children}</Layout>
+      </body>
+    </html>
   );
 }

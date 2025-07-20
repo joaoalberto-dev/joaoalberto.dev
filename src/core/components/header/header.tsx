@@ -1,21 +1,17 @@
-"use client";
+import { ReactNode } from "react";
 
-import text from "@/core/styles/text.module.css";
-import styles from "./header.module.css";
-import { cn } from "@/core/utils/cn";
-
-type HeaderProps = {
+export type HeaderProps = {
   title: string;
-  subtitle?: string;
+  description?: ReactNode;
 };
 
-function Header({ title, subtitle }: HeaderProps) {
+export function Header({ title, description }: HeaderProps) {
   return (
-    <header className={cn(styles.container, "header", "bleed")}>
-      <h1 className={text.title}>{title}</h1>
-      {subtitle && <p className={text.paragraph}>{subtitle}</p>}
+    <header className="flex flex-col gap-4">
+      <h1 className="font-sans leading-4 font-bold text-amber-950">{title}</h1>
+      {description && (
+        <p className="opacity-50 font-serif leading-5">{description}</p>
+      )}
     </header>
   );
 }
-
-export { Header };
