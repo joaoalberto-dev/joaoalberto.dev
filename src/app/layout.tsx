@@ -1,5 +1,6 @@
 import { Layout } from "@/core/components/layout/layout";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Alice, Instrument_Sans } from "next/font/google";
 import "./globals.css";
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <Layout>{children}</Layout>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
