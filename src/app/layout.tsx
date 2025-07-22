@@ -1,7 +1,8 @@
-import "./globals.css";
 import { Layout } from "@/core/components/layout/layout";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
-import { Instrument_Sans, Alice } from "next/font/google";
+import { Alice, Instrument_Sans } from "next/font/google";
+import "./globals.css";
 
 const fontSans = Instrument_Sans({
   variable: "--font-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${fontSans.variable} ${fontSerif.variable} antialiased text-base bg-amber-50 text-amber-950 py-32 px-8`}
       >
         <Layout>{children}</Layout>
+        <Analytics />
       </body>
     </html>
   );
