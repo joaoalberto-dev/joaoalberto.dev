@@ -1,8 +1,13 @@
 import { Layout } from "@/core/components/layout/layout";
+import {
+  ThemePicker,
+  Theme,
+} from "@/core/components/theme-picker/theme-picker";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Alice, Instrument_Sans } from "next/font/google";
+import { cookies } from "next/headers";
 import "./globals.css";
 
 const fontSans = Instrument_Sans({
@@ -21,16 +26,26 @@ export const metadata: Metadata = {
   description: "Software engineer",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const savedTheme = cookieStore.get("theme")?.value as Theme;
+  const initialTheme =
+    savedTheme && ["amber", "emerald", "indigo", "neutral"].includes(savedTheme)
+      ? savedTheme
+      : "neutral";
+
   return (
     <html lang="en">
       <body
-        className={`${fontSans.variable} ${fontSerif.variable} antialiased text-base bg-amber-50 text-amber-950 py-32 px-8`}
+        className={`${fontSans.variable} ${fontSerif.variable} theme-${initialTheme} antialiased text-base bg-[var(--background)] text-[var(--foreground)] py-32 px-8`}
       >
+        <div className="fixed top-8 right-8 z-50">
+          <ThemePicker initialTheme={initialTheme} />
+        </div>
         <Layout>{children}</Layout>
         <Analytics />
         <SpeedInsights />
