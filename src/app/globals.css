@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+/* Theme variables */
+.theme-amber {
+  --background: theme("colors.amber.50");
+  --foreground: theme("colors.amber.950");
+  --border: theme("colors.amber.800");
+  --hover: theme("colors.amber.100");
+}
+
+.theme-emerald {
+  --background: theme("colors.emerald.50");
+  --foreground: theme("colors.emerald.950");
+  --border: theme("colors.emerald.800");
+  --hover: theme("colors.emerald.100");
+}
+
+.theme-indigo {
+  --background: theme("colors.indigo.50");
+  --foreground: theme("colors.indigo.950");
+  --border: theme("colors.indigo.800");
+  --hover: theme("colors.indigo.100");
+}
+
+.theme-neutral {
+  --background: theme("colors.neutral.50");
+  --foreground: theme("colors.neutral.950");
+  --border: theme("colors.neutral.800");
+  --hover: theme("colors.neutral.100");
+}
