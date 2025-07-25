@@ -62,7 +62,7 @@ export function ThemePicker({
 
   return (
     <div
-      className={`h-10 w-10 bg-[var(--background)] rounded-lg relative overflow-hidden transition-[width] duration-300 ease-[cubic-bezier(0.65,0,0.35,1)] p-1.5 group ${
+      className={`h-10 w-10 bg-[var(--background)] rounded-lg relative transition-[width] duration-300 ease-[cubic-bezier(0.65,0,0.35,1)] p-1.5 group ${
         isExpanded ? "w-[185px]" : "hover:w-[185px]"
       }`}
     >
@@ -83,7 +83,7 @@ export function ThemePicker({
             )} ${
               isExpanded
                 ? "translate-y-0 opacity-50"
-                : "translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-50"
+                : "translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-50"
             } hover:opacity-100 touch-manipulation`}
             style={{ transitionDelay: `${200 + index * 100}ms` }}
             aria-label={`${theme} theme`}
