@@ -43,7 +43,7 @@ export default async function RootLayout({
       <body
         className={`${fontSans.variable} ${fontSerif.variable} theme-${initialTheme} antialiased text-base bg-[var(--background)] text-[var(--foreground)] py-32 px-8`}
       >
-        <div className="fixed top-8 right-8 z-50">
+        <div className="fixed top-4 right-4 z-50">
           <ThemePicker initialTheme={initialTheme} />
         </div>
         <Layout>{children}</Layout>

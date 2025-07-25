@@ -24,6 +24,7 @@ export function ThemePicker({
   const [selectedTheme, setSelectedTheme] = useState<Theme>(
     initialTheme || defaultTheme
   );
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleThemeSelect = (theme: Theme) => {
     setSelectedTheme(theme);
@@ -35,6 +36,11 @@ export function ThemePicker({
     );
 
     onThemeChange?.(theme);
+    setIsExpanded(false);
+  };
+
+  const toggleExpanded = () => {
+    setIsExpanded(!isExpanded);
   };
 
   const getThemeColor = (theme: Theme) => {
@@ -55,16 +61,30 @@ export function ThemePicker({
   const themes: Theme[] = ["amber", "emerald", "indigo", "neutral"];
 
   return (
-    <div className="h-10 w-10 bg-amber-100 rounded-lg relative overflow-hidden transition-[width] duration-300 ease-[cubic-bezier(0.65,0,0.35,1)] p-1.5 hover:w-[185px] group">
+    <div
+      className={`h-10 w-10 bg-[var(--background)] rounded-lg relative overflow-hidden transition-[width] duration-300 ease-[cubic-bezier(0.65,0,0.35,1)] p-1.5 group ${
+        isExpanded ? "w-[185px]" : "hover:w-[185px]"
+      }`}
+    >
       <div className="h-7 w-48 flex gap-1.5">
-        <div className={`w-7 h-7 rounded-md ${getThemeColor(selectedTheme)}`} />
+        <button
+          onClick={toggleExpanded}
+          className={`w-7 h-7 rounded-full ${getThemeColor(
+            selectedTheme
+          )} touch-manipulation`}
+          aria-label="Toggle theme picker"
+        />
         {themes.map((theme, index) => (
           <button
             key={theme}
             onClick={() => handleThemeSelect(theme)}
-            className={`w-7 h-7 relative rounded-md transition-all duration-300 ${getThemeColor(
+            className={`w-7 h-7 relative rounded-full transition-all duration-300 ${getThemeColor(
               theme
-            )} translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-50 hover:opacity-100`}
+            )} ${
+              isExpanded
+                ? "translate-y-0 opacity-50"
+                : "translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-50"
+            } hover:opacity-100 touch-manipulation`}
             style={{ transitionDelay: `${200 + index * 100}ms` }}
             aria-label={`${theme} theme`}
           />
