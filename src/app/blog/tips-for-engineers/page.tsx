@@ -2,6 +2,8 @@ import { Header } from "@/core/components/header/header";
 import { Section } from "@/core/components/section/section";
 import type { Metadata } from "next";
 
+export const dynamic = "force-static";
+
 const content = [
   {
     title: "Don't get blocked",

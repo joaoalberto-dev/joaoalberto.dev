@@ -4,6 +4,8 @@ import { ExperiencesList } from "@/features/experiences-list/expetiences-list";
 import { ProjectsList } from "@/features/projects-list/projects-list";
 import { Social } from "@/features/social/social";
 
+export const dynamic = "force-static";
+
 export default function Home() {
   return (
     <main className="flex flex-col gap-y-16 max-w-[420px] mx-auto">
