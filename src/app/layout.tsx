@@ -1,8 +1,6 @@
 import { Layout } from "@/core/components/layout/layout";
-import {
-  ThemePicker,
-  Theme,
-} from "@/core/components/theme-picker/theme-picker";
+import { ThemePicker } from "@/core/components/theme-picker/theme-picker";
+import { Theme } from "@/core/components/theme-picker/themes";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
@@ -33,10 +31,7 @@ export default async function RootLayout({
 }>) {
   const cookieStore = await cookies();
   const savedTheme = cookieStore.get("theme")?.value as Theme;
-  const initialTheme =
-    savedTheme && ["amber", "emerald", "indigo", "neutral"].includes(savedTheme)
-      ? savedTheme
-      : "neutral";
+  const initialTheme = savedTheme || "neutral";
 
   return (
     <html lang="en">

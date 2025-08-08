@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-export type Theme = "amber" | "emerald" | "indigo" | "neutral";
+import { Theme, themes } from "./themes";
 
 export type ThemePickerProps = {
   onThemeChange?: (theme: Theme) => void;
@@ -57,8 +56,6 @@ export function ThemePicker({
         return "bg-amber-500";
     }
   };
-
-  const themes: Theme[] = ["amber", "emerald", "indigo", "neutral"];
 
   return (
     <div
