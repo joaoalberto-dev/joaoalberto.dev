@@ -9,10 +9,23 @@ export type ThemePickerProps = {
   initialTheme?: Theme;
 };
 
-const setCookie = (name: string, value: string, days: number = 365) => {
+const setCookie = async (name: string, value: string, days: number = 365) => {
   const expires = new Date();
   expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-  document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+
+  if ("cookieStore" in window) {
+    try {
+      window.cookieStore.set({
+        name,
+        value,
+        expires: expires.getTime(),
+        path: "/",
+      });
+      return;
+    } catch (error) {
+      console.warn("Cookie Store API failed", error);
+    }
+  }
 };
 
 export function ThemePicker({
@@ -65,6 +78,7 @@ export function ThemePicker({
     >
       <div className="h-7 w-48 flex gap-1.5">
         <button
+          type="button"
           onClick={toggleExpanded}
           className={`w-7 h-7 rounded-full ${getThemeColor(
             selectedTheme,
@@ -74,6 +88,7 @@ export function ThemePicker({
         {themes.map((theme, index) => (
           <button
             key={theme}
+            type="button"
             onClick={() => handleThemeSelect(theme)}
             className={`w-7 h-7 relative rounded-full transition-all duration-300 ${getThemeColor(
               theme,
