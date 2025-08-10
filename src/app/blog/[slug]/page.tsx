@@ -1,10 +1,10 @@
-import { Header } from "@/core/components/header/header";
-import { Section } from "@/core/components/section/section";
-import { MDXProvider } from "@mdx-js/react";
+import type { MDXProvider } from "@mdx-js/react";
+import type { ResolvingMetadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { serialize } from "next-mdx-remote/serialize";
+import { Header } from "@/core/components/header/header";
+import { Section } from "@/core/components/section/section";
 import { getContent } from "./_utils/get-content";
-import { ResolvingMetadata } from "next";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -12,7 +12,7 @@ type Props = {
 
 export async function generateMetadata(
   { params }: Props,
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ) {
   const { slug } = await params;
   const content = getContent(slug);

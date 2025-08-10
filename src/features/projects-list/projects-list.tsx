@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { RightArrow } from "@/core/icons";
 import { Section } from "@/core/components/section/section";
+import { RightArrow } from "@/core/icons";
 
 const projects = [
   {

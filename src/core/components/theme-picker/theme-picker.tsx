@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Theme, themes } from "./themes";
+import { type Theme, themes } from "./themes";
 
 export type ThemePickerProps = {
   onThemeChange?: (theme: Theme) => void;
@@ -21,7 +21,7 @@ export function ThemePicker({
   initialTheme,
 }: ThemePickerProps) {
   const [selectedTheme, setSelectedTheme] = useState<Theme>(
-    initialTheme || defaultTheme
+    initialTheme || defaultTheme,
   );
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -31,7 +31,7 @@ export function ThemePicker({
 
     document.body.className = document.body.className.replace(
       /theme-\w+/,
-      `theme-${theme}`
+      `theme-${theme}`,
     );
 
     onThemeChange?.(theme);
@@ -67,7 +67,7 @@ export function ThemePicker({
         <button
           onClick={toggleExpanded}
           className={`w-7 h-7 rounded-full ${getThemeColor(
-            selectedTheme
+            selectedTheme,
           )} touch-manipulation`}
           aria-label="Toggle theme picker"
         />
@@ -76,7 +76,7 @@ export function ThemePicker({
             key={theme}
             onClick={() => handleThemeSelect(theme)}
             className={`w-7 h-7 relative rounded-full transition-all duration-300 ${getThemeColor(
-              theme
+              theme,
             )} ${
               isExpanded
                 ? "translate-y-0 opacity-50"

@@ -1,11 +1,11 @@
-import { Layout } from "@/core/components/layout/layout";
-import { ThemePicker } from "@/core/components/theme-picker/theme-picker";
-import { Theme } from "@/core/components/theme-picker/themes";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Alice, Instrument_Sans } from "next/font/google";
 import { cookies } from "next/headers";
+import { Layout } from "@/core/components/layout/layout";
+import { ThemePicker } from "@/core/components/theme-picker/theme-picker";
+import type { Theme } from "@/core/components/theme-picker/themes";
 import "./globals.css";
 
 const fontSans = Instrument_Sans({
