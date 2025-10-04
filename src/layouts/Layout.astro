@@ -17,7 +17,7 @@ import { GridBackground } from "../components/grid-background/grid-background";
   <body
     class="bg-gradient-to-tr from-neutral-50 to-neutral-200 text-neutral-900 dark:text-neutral-50 dark:bg-gradient-to-tr dark:from-neutral-900 dark:to-neutral-800"
   >
-    <GridBackground>
+    <GridBackground client:only="react">
       <slot />
     </GridBackground>
   </body>
