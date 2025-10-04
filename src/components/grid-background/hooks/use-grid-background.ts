@@ -1,4 +1,5 @@
 import { type RefObject, useEffect } from "react";
+import { useDarkMode } from "./use-dark-mode";
 
 type Size = {
   width: number;
@@ -28,6 +29,9 @@ export function useGridBackground(
   canvas: RefObject<HTMLCanvasElement | null>,
   size: { width: number; height: number }
 ) {
+  const isDarkMode = useDarkMode();
+  const color = isDarkMode ? "rgb(255 255 255 / 1%)" : "rgb(0 0 0 / 2%)";
+
   useEffect(() => {
     instructions.length = 0;
 
@@ -66,7 +70,7 @@ export function useGridBackground(
     window.addEventListener("mousemove", handleMouseMove);
 
     instructions.push((ctx, size) => {
-      ctx.fillStyle = "rgb(255 255 255 / 1%)";
+      ctx.fillStyle = color;
 
       const vCount = Math.ceil(size.width / spacing) + 2;
       const hCount = Math.ceil(size.height / spacing) + 2;
@@ -95,5 +99,5 @@ export function useGridBackground(
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [canvas.current, size]);
+  }, [canvas.current, size, color]);
 }
