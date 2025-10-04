@@ -15,7 +15,9 @@ export function GridBackground({ children }: GridBackgroundProps) {
   return (
     <div className="min-w-full min-h-screen relative">
       <canvas ref={canvasRef} className="absolute inset-0 z-0" {...size} />
-      <main className="relative z-10">{children}</main>
+      <main className="relative z-10 w-full h-dvh flex items-center justify-center">
+        {children}
+      </main>
     </div>
   );
 }
