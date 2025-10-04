@@ -13,10 +13,10 @@ export function useScreenSize() {
 
     setScreenSize();
 
-    document.addEventListener("resize", setScreenSize);
+    window.addEventListener("resize", setScreenSize);
 
     return () => {
-      document.removeEventListener("resize", setScreenSize);
+      window.removeEventListener("resize", setScreenSize);
     };
   }, []);
 
