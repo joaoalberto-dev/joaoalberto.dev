@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { Font } from "astro:assets";
+import { GridBackground } from "../components/grid-background/grid-background";
 ---
 
 <!doctype html>
@@ -16,7 +17,9 @@ import { Font } from "astro:assets";
   <body
     class="bg-gradient-to-tr from-neutral-50 to-neutral-200 text-neutral-900 dark:text-neutral-50 dark:bg-gradient-to-tr dark:from-neutral-900 dark:to-neutral-800"
   >
-    <slot />
+    <GridBackground>
+      <slot />
+    </GridBackground>
   </body>
 </html>
 
