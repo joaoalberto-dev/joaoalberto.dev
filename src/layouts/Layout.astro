@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import { Font } from "astro:assets";
-import { GridBackground } from "../components/grid-background/grid-background";
+import { ShaderBackground } from "@/components/shader-background/shader-background";
 ---
 
 <!doctype html>
@@ -17,9 +17,9 @@ import { GridBackground } from "../components/grid-background/grid-background";
   <body
     class="bg-gradient-to-tr from-white to-neutral-100 text-neutral-900 dark:text-neutral-50 dark:bg-gradient-to-tr dark:from-neutral-900 dark:to-neutral-800"
   >
-    <GridBackground client:only="react">
+    <ShaderBackground client:only="react">
       <slot />
-    </GridBackground>
+    </ShaderBackground>
   </body>
 </html>
 
