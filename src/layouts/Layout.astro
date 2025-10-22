@@ -13,6 +13,18 @@ import { ShaderBackground } from "@/components/shader-background/shader-backgrou
     <meta name="generator" content={Astro.generator} />
     <title>João Alberto - Software engineer</title>
     <Font cssVariable="--font-body" preload />
+    <script
+      is:inline
+      src="https://www.googletagmanager.com/gtag/js?id=G-74EP327YTZ"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-74EP327YTZ");
+    </script>
   </head>
   <body
     class="bg-gradient-to-tr from-white to-neutral-100 text-neutral-900 dark:text-neutral-50 dark:bg-gradient-to-tr dark:from-neutral-900 dark:to-neutral-800"
