@@ -3,11 +3,35 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <a
-    href="https://github.com/joaoalberto-dev"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="px-8 py-4 rounded-xl text-neutral-50 bg-neutral-900 hover:shadow-2xl"
-    >João Alberto
-  </a>
+  <div
+    class="animate-fade-in max-w-[600px] font-black px-4 w-full h-full text-balance"
+  >
+    <header class="pt-16 space-y-10">
+      <h1 class="text-xl tracking-widest">João Alberto</h1>
+      <div class="relative">
+        <p class="md:absolute right-[105%] opacity-40">About</p>
+        <div class="space-y-2 max-w-[380px] text-xl tracking-wide">
+          <p>
+            I'm a software engineer interested in all aspects of human–computer
+            interaction.
+          </p>
+          <p>I have over 10 years of experience building software.</p>
+        </div>
+      </div>
+      <div class="relative">
+        <p class="md:absolute right-[105%] opacity-40">Social</p>
+        <ul class="flex gap-8 text-xl tracking-wide text-blue-300">
+          <li><a href="https://github.com/joaoalberto-dev">Github</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/joao-alberto-mo/">LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://x.com/joaoalbertodev"
+              >X <small class="text-xs line-through">(Twitter)</small></a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+  </div>
 </Layout>
