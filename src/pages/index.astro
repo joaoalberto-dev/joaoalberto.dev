@@ -1,4 +1,5 @@
 ---
+import { PageSection } from "@/components/page-section/page-section";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -8,8 +9,7 @@ import Layout from "../layouts/Layout.astro";
   >
     <header class="pt-16 space-y-10">
       <h1 class="text-xl tracking-widest">João Alberto</h1>
-      <div class="relative">
-        <p class="md:absolute right-[105%] opacity-40">About</p>
+      <PageSection title="About">
         <div class="space-y-2 max-w-[380px] text-xl tracking-wide">
           <p>
             I'm a software engineer interested in all aspects of human–computer
@@ -17,9 +17,8 @@ import Layout from "../layouts/Layout.astro";
           </p>
           <p>I have over 10 years of experience building software.</p>
         </div>
-      </div>
-      <div class="relative">
-        <p class="md:absolute right-[105%] opacity-40">Social</p>
+      </PageSection>
+      <PageSection title="Social">
         <ul class="flex gap-8 text-xl tracking-wide text-blue-300">
           <li><a href="https://github.com/joaoalberto-dev">Github</a></li>
           <li>
@@ -31,7 +30,7 @@ import Layout from "../layouts/Layout.astro";
             >
           </li>
         </ul>
-      </div>
+      </PageSection>
     </header>
   </div>
 </Layout>
