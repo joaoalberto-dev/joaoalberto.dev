@@ -1,4 +1,12 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+body {
+  align-items: center;
+  display: flex;
+  font-family: var(--font-body);
+  justify-content: center;
+}
 
 @theme {
   --animate-fade-in: fade-in 0.3s ease-in;

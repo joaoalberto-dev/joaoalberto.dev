@@ -1,27 +1,33 @@
 ---
-import { PageSection } from "@/components/page-section/page-section";
+import { getCollection } from "astro:content";
+
 import Layout from "../layouts/Layout.astro";
 import { Social } from "@/components/social/social";
+import { PageSection } from "@/components/page-section/page-section";
+import { Header } from "@/components/header/header";
+
+const posts = await getCollection("blog");
 ---
 
 <Layout>
-  <div
-    class="animate-fade-in max-w-[600px] font-black px-4 w-full h-full text-balance"
-  >
-    <header class="pt-16 space-y-10">
-      <h1 class="text-xl tracking-widest">João Alberto</h1>
-      <PageSection title="About">
-        <div class="space-y-2 max-w-[380px] text-xl tracking-wide">
-          <p>
-            I'm a software engineer interested in all aspects of human–computer
-            interaction.
-          </p>
-          <p>I have over 10 years of experience building software.</p>
-        </div>
-      </PageSection>
-      <PageSection title="Social">
-        <Social />
-      </PageSection>
-    </header>
-  </div>
+  <Header title="João Alberto" />
+  <PageSection title="About">
+    <div class="space-y-2 max-w-[380px] text-xl tracking-wide">
+      <p>
+        I'm a software engineer interested in all aspects of human–computer
+        interaction.
+      </p>
+      <p>I have over 10 years of experience building software.</p>
+    </div>
+  </PageSection>
+  <PageSection title="Social">
+    <Social />
+  </PageSection>
+  <PageSection title="Blog">
+    {
+      posts.map((post) => (
+        <a href={`/blog/${post.data.slug}`}>{post.data.title}</a>
+      ))
+    }
+  </PageSection>
 </Layout>

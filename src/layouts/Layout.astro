@@ -30,23 +30,11 @@ import { ShaderBackground } from "@/components/shader-background/shader-backgrou
     class="bg-gradient-to-tr from-white to-neutral-100 text-neutral-900 dark:text-neutral-50 dark:bg-gradient-to-tr dark:from-neutral-900 dark:to-neutral-800"
   >
     <ShaderBackground client:only="react">
-      <slot />
+      <div
+        class="animate-fade-in max-w-[600px] font-black px-4 w-full h-full text-balance py-16 space-y-10"
+      >
+        <slot />
+      </div>
     </ShaderBackground>
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  body {
-    align-items: center;
-    display: flex;
-    font-family: var(--font-body);
-    justify-content: center;
-  }
-</style>

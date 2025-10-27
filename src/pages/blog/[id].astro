@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+import { Header } from "@/components/header/header";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout>
+  <article>
+    <Header title={post.data.title} />
+    <div class="mt-20 space-y-1 prose dark:prose-invert">
+      <Content />
+    </div>
+  </article>
+</Layout>
