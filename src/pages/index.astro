@@ -7,6 +7,7 @@ import { PageSection } from "@/components/page-section/page-section";
 import { Header } from "@/components/header/header";
 
 const posts = await getCollection("blog");
+const bookmarks = (await getCollection("bookmarks"))[0].data.bookmarks;
 ---
 
 <Layout>
@@ -34,4 +35,17 @@ const posts = await getCollection("blog");
       }
     </ul>
   </PageSection>
+  {bookmarks.length > 0 && (
+    <PageSection title="Bookmarks">
+      <ul class="space-y-2">
+        {
+          bookmarks.map((bookmark) => (
+            <li>
+              <a target="_blank" rel="noopener noreferrer" href={bookmark.link}>{bookmark.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </PageSection>
+  )}
 </Layout>
