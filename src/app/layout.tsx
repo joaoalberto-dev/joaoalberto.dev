@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
+import { bodyFont } from "@/ui/fonts/fonts";
 
 export const metadata: Metadata = {
   title: "João Alberto",
@@ -14,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={bodyFont.className}>{children}</body>
     </html>
   );
 }
