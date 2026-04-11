@@ -5,7 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:fix": "oxfmt",
+    "check": "npm run lint && npm run fmt",
+    "check:fix": "npm run lint:fix && npm run fmt:fix"
   },
   "dependencies": {
     "next": "16.2.3",
@@ -17,6 +23,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "oxfmt": "^0.44.0",
+    "oxlint": "^1.59.0",
     "typescript": "^5"
   }
 }
