@@ -1,5 +1,5 @@
-import { Schibsted_Grotesk } from 'next/font/google'
+import { Instrument_Sans } from "next/font/google";
 
-export const bodyFont = Schibsted_Grotesk({
-    weight: ['400', '600']
-})
+export const bodyFont = Instrument_Sans({
+  weight: ["400", "600"],
+});
