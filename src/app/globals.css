@@ -6,6 +6,13 @@
   --spacing-2: 8px;
   --spacing-3: 12px;
   --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+
+  --text-title: 24px;
+  --text-paragraph: 16px;
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -26,17 +33,45 @@ body {
 }
 
 body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   background-color: var(--background);
   color: var(--foreground);
-  min-height: 100%;
   display: flex;
   flex-direction: column;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-size: var(--text-paragraph);
+  min-height: 100%;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+p {
+  line-height: 1.618;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: var(--spacing-1);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utility classes: Layout */
+
+.layout--vertical {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.layout--horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-4);
 }

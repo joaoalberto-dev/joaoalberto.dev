@@ -1,0 +1,4 @@
+.title {
+  font-size: var(--text-title);
+  opacity: 0.75;
+}

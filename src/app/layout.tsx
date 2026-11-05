@@ -1,11 +1,11 @@
 // oxlint-disable-next-line import/no-unassigned-import
 import "./globals.css";
 import type { Metadata } from "next";
-import { Instrument_Serif } from "next/font/google";
+import { Fraunces } from "next/font/google";
 
 import { Layout } from "@/ui/components/layout/layout";
 
-const bodyFont = Instrument_Serif({
+const bodyFont = Fraunces({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["400"],
