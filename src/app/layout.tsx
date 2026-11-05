@@ -10,8 +10,8 @@ const bodyFont = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "João Alberto | Software engineer",
-  description: "",
+  title: "João Alberto",
+  description: "I'm a software engineer interested in all aspects of human-computer interaction.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
