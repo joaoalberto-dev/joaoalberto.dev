@@ -3,6 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Instrument_Serif } from "next/font/google";
 
+import { Layout } from "@/ui/components/layout/layout";
+
 const bodyFont = Instrument_Serif({
   subsets: ["latin"],
   variable: "--font-body",
@@ -21,7 +23,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={bodyFont.className}
     >
-      <body>{children}</body>
+      <body>
+        <Layout>{children}</Layout>
+      </body>
     </html>
   );
 }
