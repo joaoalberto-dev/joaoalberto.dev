@@ -1,6 +1,11 @@
 :root {
   --background: #fefefe;
   --foreground: #212121;
+
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
 }
 
 @media screen and (prefers-color-scheme: dark) {
