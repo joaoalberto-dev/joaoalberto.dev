@@ -18,5 +18,5 @@
     // see https://opennext.js.org/cloudflare/howtos/image
     "binding": "IMAGES",
   },
-  "observability": { "logs": { "enabled": false, "invocation_logs": true } },
+  "observability": { "logs": { "enabled": true, "invocation_logs": true } },
 }
